@@ -1,0 +1,35 @@
+// you can save variables and reuse them
+$andrew-blue: #758cdd;
+$andrew-white: rgb(213, 226, 243);
+
+$font-weights: (
+    'regular' : 400,
+    'medium' : 500,
+    'large' : 600
+);
+$border-rad: (
+    'boxy' : 5px,
+    "rounded" : 20px,
+    'circular' : 50%,
+);
+
+body{
+    background-color: $andrew-blue;
+}
+
+.main {
+    font-weight: map-get($font-weights, $key: large);
+    ul {
+        background-color: $andrew-white;
+        border-radius: map-get($border-rad, rounded);
+    }
+
+    #{&}__lorem {
+        font-style: italic;
+        border-radius: map-get($border-rad, $key: boxy);
+    
+        &:hover {
+            background-color: $andrew-white;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+body {
+  background-color: #758cdd;
+}
+
+.main {
+  font-weight: 600;
+}
+.main ul {
+  background-color: rgb(213, 226, 243);
+  border-radius: 20px;
+}
+.main .main__lorem {
+  font-style: italic;
+  border-radius: 5px;
+}
+.main .main__lorem:hover {
+  background-color: rgb(213, 226, 243);
+}
+
+/*# sourceMappingURL=style.css.map */
