@@ -9,13 +9,32 @@
     <title>Modal Window Test</title>
 </head>
 
-<body class="main">
+<body>
+
+    <div class='main'>
+        
     <h1>Test of Modal Window</h1>
+
     <div class="main__container">
-        <p class="main__modal-button">Show Modal One</p>
-        <p class="main__modal-button">Show Modal Two</p>
-        <p class="main__modal-button">Show Modal Three</p>
+        <button class="main__modal-button">Show Modal One</button>
+        <button class="main__modal-button">Show Modal Two</button>
+        <button class="main__modal-button">Show Modal Three</button>
     </div>
+
+        <div class="modal hidden">
+            <button class="close-modal">X</button>
+            <h1>this is a modal window</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui a sed reiciendis, possimus vero nihil
+                aliquam
+                quos tenetur, error excepturi beatae. Doloremque in blanditiis provident atque alias architecto
+                reprehenderit cum?</p>
+        </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+
+    <script src="./index.js"></script>
+
 </body>
 
 </html>
