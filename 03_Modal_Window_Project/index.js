@@ -11,3 +11,8 @@ for (let i = 0; i < buttonsOpenModel.length; i++) {
         overlay.classList.remove('hidden');
     });
 }
+
+buttonCloseModel.addEventListener('click', function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+})
