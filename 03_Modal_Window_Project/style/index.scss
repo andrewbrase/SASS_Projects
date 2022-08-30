@@ -20,13 +20,13 @@
 
     .main {
         text-align: center;
-        
+
         #{&}__container {
             @include flexRow();
             text-align: center;
             gap: 20px;
         }
-    
+
         #{&}__modal-button {
             width: 20%;
             border-radius: 15px;
@@ -37,6 +37,24 @@
         #{&}__modal-button:hover {
             background-color: rgb(84, 180, 148);
         }
+
+        &__modal-hidden {
+
+            background-color: rgb(255, 255, 255);
+            margin-top: 20px;
+            border-radius: 20px;
+            width: 65%;
+
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .close-modal {
+            margin-right: 20px;
+            margin-top: 20px;
+            float: right;
+        }
     }
 }
 
@@ -44,7 +62,7 @@
     body {
         background-color: rgb(84, 185, 185);
     }
-    
+
     .main {
         text-align: center;
 
@@ -52,18 +70,19 @@
             @include flexCol();
             text-align: center;
         }
-    
+
         #{&}__modal-button {
             background-color: aqua;
             border-radius: 15px;
             padding: 20px;
+            margin-top: 20px;
             margin-left: auto;
             margin-right: auto;
             width: 80%;
         }
 
         #{&}__modal-button:hover {
-            background-color: rgb(37, 173, 173); 
+            background-color: rgb(37, 173, 173);
         }
     }
 }
