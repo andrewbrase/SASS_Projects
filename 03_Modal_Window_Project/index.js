@@ -8,5 +8,6 @@ const buttonsOpenModel = document.querySelectorAll('.main__modal-button');
 for (let i = 0; i < buttonsOpenModel.length; i++) {
     buttonsOpenModel[i].addEventListener('click', function () {
         modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
     });
 }
