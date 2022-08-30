@@ -2,6 +2,9 @@
   body {
     background-color: rgb(95, 161, 113);
   }
+  .main__overlay-hidden {
+    background-color: aqua;
+  }
   .main {
     text-align: center;
   }
@@ -12,54 +15,32 @@
     text-align: center;
     gap: 20px;
   }
-  .main .main__modal-button {
-    width: 20%;
-    border-radius: 15px;
+  .main__modal-button {
+    border: none;
+    width: 200px;
+    border-radius: 40px;
     padding: 20px;
-    background-color: aquamarine;
-  }
-  .main .main__modal-button:hover {
-    background-color: rgb(84, 180, 148);
-  }
-  .main__modal-hidden {
     background-color: rgb(255, 255, 255);
+  }
+  .main__modal-button:hover {
+    background-color: rgb(221, 221, 221);
+  }
+  .main .hidden {
+    display: none;
+  }
+  .main .modal {
+    background-color: rgba(255, 255, 255, 0.807);
     margin-top: 20px;
     border-radius: 20px;
     width: 65%;
+    padding: 20px;
     margin-left: auto;
     margin-right: auto;
   }
   .main .close-modal {
-    margin-right: 20px;
-    margin-top: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
     float: right;
-  }
-}
-@media (orientation: portrait) {
-  body {
-    background-color: rgb(84, 185, 185);
-  }
-  .main {
-    text-align: center;
-  }
-  .main .main__container {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .main .main__modal-button {
-    background-color: aqua;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-  }
-  .main .main__modal-button:hover {
-    background-color: rgb(37, 173, 173);
   }
 }
 
