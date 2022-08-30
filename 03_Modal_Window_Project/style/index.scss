@@ -1,0 +1,69 @@
+@import './variable.scss';
+
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@mixin flexCol {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (orientation : landscape) {
+    body {
+        background-color: rgb(95, 161, 113);
+    }
+
+    .main {
+        text-align: center;
+        
+        #{&}__container {
+            @include flexRow();
+            text-align: center;
+            gap: 20px;
+        }
+    
+        #{&}__modal-button {
+            width: 20%;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: aquamarine;
+        }
+
+        #{&}__modal-button:hover {
+            background-color: rgb(84, 180, 148);
+        }
+    }
+}
+
+@media (orientation : portrait) {
+    body {
+        background-color: rgb(84, 185, 185);
+    }
+    
+    .main {
+        text-align: center;
+
+        #{&}__container {
+            @include flexCol();
+            text-align: center;
+        }
+    
+        #{&}__modal-button {
+            background-color: aqua;
+            border-radius: 15px;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #{&}__modal-button:hover {
+            background-color: rgb(37, 173, 173); 
+        }
+    }
+}
