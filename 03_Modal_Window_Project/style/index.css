@@ -1,57 +1,57 @@
-@media (orientation: landscape) {
-  body {
-    background-color: rgb(95, 161, 113);
-  }
-  .main__overlay-hidden {
-    background-color: aqua;
-  }
-  .main {
-    text-align: center;
-  }
-  .main .main__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    gap: 20px;
-  }
-  .main__modal-button {
-    border: none;
-    width: 200px;
-    border-radius: 40px;
-    padding: 20px;
-    background-color: rgb(255, 255, 255);
-  }
-  .main__modal-button:hover {
-    background-color: rgb(221, 221, 221);
-  }
-  .main .hidden {
-    display: none;
-  }
-  .main .modal {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15%;
-    background-color: rgba(255, 255, 255, 0.807);
-    border-radius: 20px;
-    width: 65%;
-    padding: 20px;
-  }
-  .main .close-modal {
-    margin-right: 10px;
-    margin-top: 10px;
-    float: right;
-  }
-  .main .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
-    z-index: 5;
-  }
+body {
+  background-color: rgb(95, 161, 113);
+}
+
+.main__overlay-hidden {
+  background-color: aqua;
+}
+
+.main {
+  text-align: center;
+}
+.main .main__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+.main__modal-button {
+  border: none;
+  width: 200px;
+  border-radius: 40px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.main__modal-button:hover {
+  background-color: rgb(221, 221, 221);
+}
+.main .hidden {
+  display: none;
+}
+.main .modal {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  background-color: rgba(255, 255, 255, 0.807);
+  border-radius: 20px;
+  width: 65%;
+  padding: 20px;
+}
+.main .close-modal {
+  margin-right: 10px;
+  margin-top: 10px;
+  float: right;
+}
+.main .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }
 
 /*# sourceMappingURL=index.css.map */

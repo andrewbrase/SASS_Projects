@@ -13,96 +13,65 @@
     margin-right: auto;
 }
 
-@media (orientation : landscape) {
-    body {
-        background-color: rgb(95, 161, 113);
-    }
-
-    .main__overlay-hidden {
-        background-color: aqua;
-    }
-
-    .main {
-        text-align: center;
-
-        #{&}__container {
-            @include flexRow();
-            text-align: center;
-            gap: 20px;
-        }
-
-        &__modal-button {
-            border: none;
-            width: 200px;
-            border-radius: 40px;
-            padding: 20px;
-            background-color: rgb(255, 255, 255);
-        }
-
-        &__modal-button:hover {
-            background-color: rgb(221, 221, 221);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .modal {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 15%;
-
-            background-color: rgba(255, 255, 255, 0.807);
-
-            border-radius: 20px;
-            width: 65%;
-            padding: 20px;
-        }
-
-        .close-modal {
-            margin-right: 10px;
-            margin-top: 10px;
-            float: right;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(3px);
-            z-index: 5;
-        }
-    }
+body {
+    background-color: rgb(95, 161, 113);
 }
 
-// @media (orientation : portrait) {
-//     body {
-//         background-color: rgb(84, 185, 185);
-//     }
+.main__overlay-hidden {
+    background-color: aqua;
+}
 
-//     .main {
-//         text-align: center;
+.main {
+    text-align: center;
 
-//         #{&}__container {
-//             @include flexCol();
-//             text-align: center;
-//         }
+    #{&}__container {
+        @include flexRow();
+        text-align: center;
+        gap: 20px;
+    }
 
-//         #{&}__modal-button {
-//             background-color: aqua;
-//             border-radius: 15px;
-//             padding: 20px;
-//             margin-top: 20px;
-//             margin-left: auto;
-//             margin-right: auto;
-//             width: 80%;
-//         }
+    &__modal-button {
+        border: none;
+        width: 200px;
+        border-radius: 40px;
+        padding: 20px;
+        background-color: rgb(255, 255, 255);
+    }
 
-//         #{&}__modal-button:hover {
-//             background-color: rgb(37, 173, 173);
-//         }
-//     }
-// }
+    &__modal-button:hover {
+        background-color: rgb(221, 221, 221);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .modal {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15%;
+
+        background-color: rgba(255, 255, 255, 0.807);
+
+        border-radius: 20px;
+        width: 65%;
+        padding: 20px;
+    }
+
+    .close-modal {
+        margin-right: 10px;
+        margin-top: 10px;
+        float: right;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 5;
+    }
+}
