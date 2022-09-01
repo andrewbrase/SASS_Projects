@@ -1,13 +1,95 @@
 .main {
 
+    background-image: url('../../04_hangman_project/images/hangmanbar.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 400px;
+
+    h1 {
+        position: relative;
+        left: 200px;
+    }
+
+    #goal-word{
+        position: relative;
+        left: 400px;
+        letter-spacing: 10px;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+
     img {
         width: 100px;
         height: 100px;
     }
 
-    #{&}__head {
-        background-color: aqua;
+    #newgame {
+        position: relative;
+        top:-35px;
     }
-    
-    background-color: rgb(193, 193, 193);
+
+    #{&}__head {
+        position: relative;
+        left: 105px;
+    }
+
+    &__person {
+        position: relative;
+        left: 120px;
+        margin-top: -10px;
+    }
+
+    &__torso {
+        margin-top: -15px;
+
+        .left {
+            position: relative;
+            left: 60px;
+        }
+
+        .right {
+            position: relative;
+            right: 60px;
+        }
+    }
+
+    &__legs {
+        margin-top: -10px;
+        position: relative;
+        left: 50px;
+
+        .left-leg {
+            position: relative;
+            left: 20px;
+        }
+
+        ;
+
+        .right-leg {
+            position: relative;
+            right: 20px;
+        }
+    }
+
+    .guess-area {
+        position: relative;
+        top: 50px;
+        left: 180px;
+    }
+
+    .wrong-guess {
+        position: relative;
+        top: 50px;
+    }
+
+    #wrong {
+        font-size: 40px;
+        text-decoration: line-through;
+    }
+
+    .hidden {
+        opacity: 0;
+    }
 }
