@@ -1,0 +1,13 @@
+.main {
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #{&}__head {
+        background-color: aqua;
+    }
+    
+    background-color: rgb(193, 193, 193);
+}

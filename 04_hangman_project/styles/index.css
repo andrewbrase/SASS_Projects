@@ -1,0 +1,12 @@
+.main {
+  background-color: rgb(193, 193, 193);
+}
+.main img {
+  width: 100px;
+  height: 100px;
+}
+.main .main__head {
+  background-color: aqua;
+}
+
+/*# sourceMappingURL=index.css.map */
