@@ -32,8 +32,8 @@ submit.addEventListener('click' , function () {
     let charIndexs = [];
 
     if (guess.value !== '') {
-        for (let i = 0; i < wordArr.length; i++) {
-            if (wordArr[wordArrIndex][i] === guess.value) {
+        for (let i = 0; i < wordArr[wordArrIndex].length; i++) {
+            if (wordArr[wordArrIndex][i].toUpperCase() === guess.value.toUpperCase()) {
                 // get index of? need multiple indexes
                 console.log('guess is within word')
             
