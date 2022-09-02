@@ -18,19 +18,34 @@ const addBodyPart = (part) => {
     part.classList.remove('hidden');
 }
 
-// this is the index of the array of words to guess
+// this is the index of the array of words to guess, a new round will up-tick this
 var wordArrIndex = 0;
 
 // this will become the underline spaces that hide the letters in the word, it will 
 var spaces = '';
-
 for (let i = 0; i < wordArr[wordArrIndex].length; i++) {
     spaces += '_'
 }
+goalWord.textContent = spaces;
 
-goalWord.textContent = spaces
+submit.addEventListener('click' , function () {
+    let charIndexs = [];
 
-console.log(spaces)
-console.log(wordArr[wordArrIndex]);
+    if (guess.value !== '') {
+        for (let i = 0; i < wordArr.length; i++) {
+            if (wordArr[wordArrIndex][i] === guess.value) {
+                // get index of? need multiple indexes
+                console.log('guess is within word')
+            
+                // let result = goalWord.replace(, guess.value)
+                // console.log(result)
+
+                // goalWord.textContent = result;
+            }
+        }
+    }
+    guess.value = '';
+    // need to downtick remaining guesses
+})
 
 
