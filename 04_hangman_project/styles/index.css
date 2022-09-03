@@ -8,6 +8,10 @@
   position: relative;
   left: 200px;
 }
+.main #guessesremain {
+  position: relative;
+  left: 500px;
+}
 .main #goal-word {
   position: relative;
   left: 400px;
@@ -22,7 +26,7 @@
 }
 .main #newgame {
   position: relative;
-  top: -35px;
+  top: -85px;
 }
 .main .main__head {
   position: relative;
@@ -31,7 +35,7 @@
 .main__person {
   position: relative;
   left: 120px;
-  margin-top: -10px;
+  margin-top: -100px;
 }
 .main__torso {
   margin-top: -15px;
@@ -69,9 +73,6 @@
 .main #wrong {
   font-size: 40px;
   text-decoration: line-through;
-}
-.main .hidden {
-  opacity: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

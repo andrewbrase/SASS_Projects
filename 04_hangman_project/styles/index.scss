@@ -10,6 +10,11 @@
         left: 200px;
     }
 
+    #guessesremain {
+        position: relative;
+        left: 500px;
+    }
+
     #goal-word{
         position: relative;
         left: 400px;
@@ -27,7 +32,7 @@
 
     #newgame {
         position: relative;
-        top:-35px;
+        top:-85px;
     }
 
     #{&}__head {
@@ -38,7 +43,7 @@
     &__person {
         position: relative;
         left: 120px;
-        margin-top: -10px;
+        margin-top: -100px;
     }
 
     &__torso {
@@ -89,7 +94,7 @@
         text-decoration: line-through;
     }
 
-    .hidden {
-        opacity: 0;
-    }
+    // .hidden {
+    //     opacity: 0;
+    // }
 }
