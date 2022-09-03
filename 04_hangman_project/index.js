@@ -25,27 +25,35 @@ var partIndex = 0;
 
 // this will become the underline spaces that hide the letters in the word, it will 
 var spaces = '';
+
 for (let i = 0; i < wordArr[wordArrIndex].length; i++) {
     spaces += '_'
 }
+
 goalWord.textContent = spaces;
 
+//
+
+var newArr = goalWord.textContent.split('')
+
 submit.addEventListener('click', function () {
-    let charIndexs = [];
 
     if (guess.value !== '') {
-        typeof (guess.value)
+
         for (let i = 0; i < wordArr[wordArrIndex].length; i++) {
+            
             if (wordArr[wordArrIndex][i].toUpperCase() === guess.value.toUpperCase()) {
-                // get index of? need multiple indexes
-                console.log('guess is within word')
-                // goalWord.textContent = spaces.replace
+                // console.log(`${guess.value} at index ${[i]}`);
+                
+                newArr.splice(i,1,guess.value)
+                goalWord.textContent = newArr.join('')
 
             } else {
-                addBodyPart(character[partIndex]);
+                
+                // addBodyPart(character[0])
             }
-
         }
+
     } else {
         alert('Please enter a valid letter a-z');
     }
@@ -53,5 +61,3 @@ submit.addEventListener('click', function () {
     guess.value = '';
     // need to downtick remaining guesses
 })
-
-
