@@ -25,6 +25,11 @@
         }
     }
 
+    #hint {
+        position: relative;
+        left: 400px;
+    }
+
     img {
         width: 100px;
         height: 100px;
@@ -94,7 +99,7 @@
         text-decoration: line-through;
     }
 
-    // .hidden {
-    //     opacity: 0;
-    // }
+    .hidden {
+        opacity: 0;
+    }
 }

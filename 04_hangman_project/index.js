@@ -14,20 +14,25 @@ const usedLetters = document.querySelector('#wrong');
 const remainGuesses = document.querySelector('#guessesnum');
 
 // make JSON obj that includes hints too?
-var wordArr = ['Website', 'December', 'Cat', 'Lizard', 'Lemon', 'frog', 'END'];
-var character = [head, leftArm, torso, rightArm, leftLeg, rightLeg, 'END'];
+var wordArr = ['Website', 'December', 'Cat', 'Lizard', 'Lemon', 'frog'];
+var character = [head, leftArm, torso, rightArm, leftLeg, rightLeg];
 
 usedLetters.textContent = '';
 
 const addBodyPart = (part) => {
     part.classList.remove('hidden');
+    bodyIndex++
+}
+
+const reHideBody = () => {
+    for (let i = 0; i < character.length; i++){
+        character[i].classList.add('hidden');
+    }
 }
 
 // this is the index of the array of words to guess, a new round will up-tick this
 var wordArrIndex = 0;
-
-// this will become the underline spaces that hide the letters in the word, it will 
-// create function?? for newgame and initialize
+var bodyIndex = 0;
 
 const createSpaces = (array, word) => {
     let spaces = '';
@@ -45,8 +50,6 @@ for (let i = 0; i < wordArr[wordArrIndex].length; i++) {
 
 goalWord.textContent = spaces;
 
-//
-
 var newArr = goalWord.textContent.split('')
 
 submit.addEventListener('click', function () {
@@ -56,15 +59,14 @@ submit.addEventListener('click', function () {
         for (let i = 0; i < wordArr[wordArrIndex].length; i++) {
             
             if (wordArr[wordArrIndex][i].toUpperCase() === guess.value.toUpperCase()) {
-                // console.log(`${guess.value} at index ${[i]}`);
-                
+
                 newArr.splice(i,1,guess.value.toLowerCase())
                 goalWord.textContent = newArr.join('')
-
-            } else {
-                // will do 6 times
-                // addBodyPart(character[0]) ???
             }
+        }
+
+        if (goalWord.textContent.includes(guess.value) == false) {
+            addBodyPart(character[bodyIndex])
         }
 
         usedLetters.textContent = usedLetters.textContent + ' ' + guess.value
@@ -77,17 +79,24 @@ submit.addEventListener('click', function () {
     guess.value = '';
     // need to downtick remaining guesses
     if (!goalWord.textContent.includes('_')) {
-        alert('You win!')
+        setTimeout(() => {
+            alert('You win!')
+          }, 1000)
     } else if (remainGuesses.textContent === '0') {
-        alert('You Lose!')
+        setTimeout(() => {
+            alert('You Lose!')
+        }, 1000)
     }
 
 })
 
-// need to fix new game
 newGameButton.addEventListener('click' , function () {
-    remainGuesses.textContent = '20'
+    remainGuesses.textContent = '6'
     usedLetters.textContent = ''
     wordArrIndex ++
+    goalWord.textContent = wordArr[wordArrIndex]
     createSpaces(wordArr,wordArrIndex)
+    newArr = goalWord.textContent.split('')
+    reHideBody()
+    bodyIndex = 0;
 })
