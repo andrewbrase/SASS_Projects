@@ -39,6 +39,26 @@ const reHideBody = () => {
     }
 }
 
+// this function can be used to reset the game
+const newGame = () => {
+    remainGuesses.textContent = '6'
+    usedLetters.textContent = ''
+    wordArrIndex ++
+    goalWord.textContent = wordArr[wordArrIndex]
+    createSpaces(wordArr,wordArrIndex)
+    newArr = goalWord.textContent.split('')
+    reHideBody()
+    bodyIndex = 0;
+}
+
+// this can be used to promt the user if they'd like to play again
+const playagain = () => {
+    let again = prompt('Play again? Yes (y) or No (n)');
+    if (again.toUpperCase() === 'Y') {
+        newGame()
+    }
+}
+
 // this is the index of the array of words to guess, a new round will up-tick this
 var wordArrIndex = 0;
 
@@ -104,10 +124,12 @@ submit.addEventListener('click', function () {
     if (!goalWord.textContent.includes('_')) {
         setTimeout(() => {
             alert('You win!')
+            playagain()
           }, 1000)
     } else if (remainGuesses.textContent === '0') {
         setTimeout(() => {
             alert('You Lose!')
+            playagain()
         }, 1000)
     }
 
@@ -120,12 +142,5 @@ hintword.addEventListener('click' , function () {
 
 // this will reset the game with a new word and reset the score
 newGameButton.addEventListener('click' , function () {
-    remainGuesses.textContent = '6'
-    usedLetters.textContent = ''
-    wordArrIndex ++
-    goalWord.textContent = wordArr[wordArrIndex]
-    createSpaces(wordArr,wordArrIndex)
-    newArr = goalWord.textContent.split('')
-    reHideBody()
-    bodyIndex = 0;
+    newGame()
 })
