@@ -41,14 +41,18 @@ const reHideBody = () => {
 
 // this function can be used to reset the game
 const newGame = () => {
-    remainGuesses.textContent = '6'
-    usedLetters.textContent = ''
-    wordArrIndex ++
-    goalWord.textContent = wordArr[wordArrIndex]
-    createSpaces(wordArr,wordArrIndex)
-    newArr = goalWord.textContent.split('')
-    reHideBody()
-    bodyIndex = 0;
+    if (wordArrIndex !== 5) {
+        remainGuesses.textContent = '6'
+        usedLetters.textContent = ''
+        wordArrIndex ++
+        goalWord.textContent = wordArr[wordArrIndex]
+        createSpaces(wordArr,wordArrIndex)
+        newArr = goalWord.textContent.split('')
+        reHideBody()
+        bodyIndex = 0;
+    } else {
+        alert('Thanks for playing! You have reached the end of the game')
+    }
 }
 
 // this can be used to promt the user if they'd like to play again
