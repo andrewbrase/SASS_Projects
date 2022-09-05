@@ -20,10 +20,6 @@
 .main #goal-word span {
   text-decoration: underline;
 }
-.main #hint {
-  position: relative;
-  left: 400px;
-}
 .main img {
   width: 100px;
   height: 100px;

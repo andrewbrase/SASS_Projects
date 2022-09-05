@@ -15,7 +15,7 @@
         left: 500px;
     }
 
-    #goal-word{
+    #goal-word {
         position: relative;
         left: 400px;
         letter-spacing: 10px;
@@ -25,11 +25,6 @@
         }
     }
 
-    #hint {
-        position: relative;
-        left: 400px;
-    }
-
     img {
         width: 100px;
         height: 100px;
@@ -37,7 +32,7 @@
 
     #newgame {
         position: relative;
-        top:-85px;
+        top: -85px;
     }
 
     #{&}__head {
