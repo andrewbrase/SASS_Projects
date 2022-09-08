@@ -7,6 +7,8 @@ this is NOT static. It depends on how the function
 is called, and its value is only assigned when the 
 function is actually called.
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 different ways in which functions can be called
 1. as a method - a function attached to an object
 Method this = <object that is calling the method>
@@ -31,7 +33,8 @@ this will point to the global object - window object
 scope of the arrow function>
 
 4. event listener -> this = <DOM element that the handler is attached to>
-
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Method borrowing - taking one method from one obj and adding it to another obj
@@ -80,3 +83,21 @@ is the global scope
 
 this is an object litteral, not a code block - it does
 not get its own scope
+
+the arrow function ends up ising the window object of the browser
+***Don't use an arrow function as a method
+
+~~~~~~~~~~~~~~~~~~~~~~~
+this keyword downfall - function inside of a method
+
+const john = {
+    name : 'john' ,
+    birthyear : 1992 ,
+    isMellenial : function() {
+        console.log(this.birthyear > 1981 && this.birthyear < 1996)
+    }
+}
+
+john.isMellenial()
+---> true
+
