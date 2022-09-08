@@ -200,5 +200,3 @@ console.log(me.age)
 // both ages are now 27 even though the friend.age was changed
 ---> 27
 ---> 27
-
-why this happens -
