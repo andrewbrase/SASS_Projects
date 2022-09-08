@@ -155,4 +155,50 @@ addArrow(2,4,6,8)
 ---> arguments is not defined
 
 *** the arguments keyword only exists in 
-regular functions and not arrow functions 
+regular functions and not arrow functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Primitives vs. Objects (Primitive vs. Reference Types)
+
+
+--- JS Primitive types ---
+        Number
+        String
+        Boolean
+        Undefined
+        Null
+        Symbol
+        BigInt
+
+Reference types
+--- Objects ---
+    Object literal
+    Arrays
+    Functions
+    Many more
+
+the way that data is stored in memory - reference types
+
+--- JS engine ---
+
+
+Call Stack : where functions are executed (primitives are stored in call stack)
+Heap : where objects & reference types are stored in memory
+
+
+const me = {
+    name : 'andrew',
+    age : 22,
+}
+const friend = me;
+// creating an identical obj named friend
+
+friend.age = 27;
+console.log(friend.age)
+console.log(me.age)
+
+!!!
+// both ages are now 27 even though the friend.age was changed
+---> 27
+---> 27
+
+why this happens -
