@@ -31,3 +31,27 @@ this will point to the global object - window object
 scope of the arrow function>
 
 4. event listener -> this = <DOM element that the handler is attached to>
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Method borrowing - taking one method from one obj and adding it to another obj
+
+const dave = {
+    name : 'dave' ,
+    birthyear : 1965 ,
+    calcAge : function () {
+        return this.name + ' is ' + (2022 - this.birthyear)
+    }
+}
+
+//dave.calcAge()
+//~~~
+ const matilda = {
+    name : 'matilda' ,
+    birthyear : 2005
+ }
+
+matilda.calcAge = dave.calcAge;
+matilda.calcAge()
+
+---> matilda is 17
