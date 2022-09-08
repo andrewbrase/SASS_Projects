@@ -21,3 +21,13 @@ const andrew = {
 
 andrew.calcAge();
 ---> 22
+
+2. simple function call -> this = undefined
+this is only valid for strict mode - if not in strict mode,
+this will point to the global object - window object
+
+3. Arrow functions -> this = <this of surrounding function 
+(lexical this) - it gets picked up by the outer lexical 
+scope of the arrow function>
+
+4. event listener -> this = <DOM element that the handler is attached to>
