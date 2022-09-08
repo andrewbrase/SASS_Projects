@@ -7,3 +7,17 @@ this is NOT static. It depends on how the function
 is called, and its value is only assigned when the 
 function is actually called.
 
+different ways in which functions can be called
+1. as a method - a function attached to an object
+Method this = <object that is calling the method>
+
+const andrew = {
+    name : 'andrew' ,
+    year : 2000 ,
+    calcAge : function() {
+        return 2022 - this.year;
+    }
+};
+
+andrew.calcAge();
+---> 22
