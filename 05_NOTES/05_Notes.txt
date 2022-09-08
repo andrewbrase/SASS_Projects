@@ -126,3 +126,33 @@ it will use the this keyword of its parent scope
 const isMellenial = () => {
     console.log(this.year)
 }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Arguments keyword
+
+const addExpr = function (a,b) {
+    console.log(arguments)
+    return a + b
+}
+
+addExpr(2,5)
+---> Arguments(2) [2, 5, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+It is completely legal to add more arguments
+
+addExpr(2, 4, 6, 8)
+---> Arguments(4) [2, 4, 6, 8, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+~~~ arguments keyword with arrow function
+var addArrow = (a,b) => {
+    console.log(arguments)
+    return a + b
+}
+
+addArrow(2,4,6,8)
+
+!!!
+---> arguments is not defined
+
+*** the arguments keyword only exists in 
+regular functions and not arrow functions 
