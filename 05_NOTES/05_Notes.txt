@@ -100,4 +100,29 @@ const john = {
 
 john.isMellenial()
 ---> true
+~~~
 
+const john = {
+    firstname : 'john' ,
+    year : 1992 ,
+    calcAge : function() {
+        const isMellenial = function() {
+            console.log(this.birthyear > 1981 && this.birthyear < 1996)
+        }
+        isMellenial()
+        //return 2022 - this.year
+    } 
+}
+
+john.calcAge()
+
+/* regular functions have this keyword as undefined 
+solution 1. use const self = this (outside of the isMellenial function)
+inside of the function you can use self.year etc. */
+
+Now in es6 we have a more modern solution - use an arrow function
+soultion 2. an arrow function does not have its own this keyword,
+it will use the this keyword of its parent scope
+const isMellenial = () => {
+    console.log(this.year)
+}
