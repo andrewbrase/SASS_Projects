@@ -200,3 +200,31 @@ console.log(me.age)
 // both ages are now 27 even though the friend.age was changed
 ---> 27
 ---> 27
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+const jessica = {
+    firstname : 'jessica' ,
+    lastname : 'williams' ,
+    age : 27 ,
+}
+
+const jessicaCopy = Object.assign({}, jessica2);
+// you can use this function to merge 2 objects and return a new one 
+
+jessicaCopy.lastname = 'Davis'
+
+console.log(jessica)
+console.log(jessicaCopy)
+
+---> {firstname: 'jessica', lastname: 'williams', age: 27}
+---> {firstname: 'jessica', lastname: 'Davis', age: 27}
+
+you can still preserve the property of the first while
+creating a new value for the second
+
+this method only works on the first level or if we have an obj
+inside the obj then the inner obj will still point to the same place in memory 
+
+this only creates a shallow copy , not a deep clone 
+ex. if we had an array within the cloned obj, both would have the new arr, not just one 
