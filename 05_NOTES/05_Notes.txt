@@ -55,3 +55,28 @@ matilda.calcAge = dave.calcAge;
 matilda.calcAge()
 
 ---> matilda is 17
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+regular functions vs arrow functions & this
+
+const jonas = {
+    firstname : 'jonas' ,
+    year : 1991 ,
+    calcAge : function() {
+        return 2022 - this.year
+    } ,
+
+    // trying to use an arrow function using the this keyword 
+    greet : () => console.log(`hey ${this.firstname}`)
+}
+
+jonas.calcAge()
+// ---> 31
+jonas.greet()
+// ---> hey undefined
+
+*** AN arrow function does not get a THIS 
+keyword - the parent scope of the greet method 
+is the global scope
+
+this is an object litteral, not a code block - it does
+not get its own scope
