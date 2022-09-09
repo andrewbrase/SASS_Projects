@@ -299,3 +299,35 @@ James.displayInfo()
 
 --->    this persons name is Tim, they are 25 years old and they are 6ft tall
 --->    this persons name is James, they are 44 years old and they are 5ft tall
+
+//
+console.log(Tim.age) ---> 25
+console.log(James.age) ---> 44
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Inheritance
+
+class Car {
+    constructor(brand) {
+        this.carname = brand
+    }
+
+    present() {
+        return `I have a ${this.carname}`
+    }
+}
+
+class Model extends Car {
+    constructor( brand, mod ) {
+        super(brand);
+        this.model = mod
+    }
+
+    show() {
+        console.log(this.present() + `, it is a ${this.model}`)
+    }
+}
+
+mycar = new Model('Ford','Mustang')
+mycar.show()
+---> I have a Ford, it is a Mustang
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
