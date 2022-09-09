@@ -254,7 +254,7 @@ console.log(x,y,z)
 ---> 2 3 4
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-classes
+Classes - blueprints for creating objects
 
 class Student {
 
