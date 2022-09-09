@@ -252,3 +252,50 @@ const arr = [2,3,4]
 const [x,y,z] = arr
 console.log(x,y,z)
 ---> 2 3 4
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+classes
+
+class Student {
+
+    constructor(name) {
+        this.name=name;
+    }
+
+    displayName() {
+        console.log(`this student's name is ${this.name}`)
+    }
+
+}
+
+let studentOne = new Student('Andrew Brase');
+studentOne.displayName()
+
+let studentTwo = new Student('bob smith')
+studentTwo.displayName()
+
+--->    this student's name is Andrew Brase
+--->    this student's name is bob smith
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+class Person {
+
+    constructor (name,age,height) {
+        this.name = name
+        this.age = age
+        this.height = height
+    }
+
+    displayInfo() {
+        console.log(`this persons name is ${this.name}, they are ${this.age} years old and they are ${this.height} tall`)
+    }
+}
+
+let Tim = new Person ('Tim',25,'6ft')
+let James = new Person ('James',44,'5ft')
+
+Tim.displayInfo()
+James.displayInfo()
+
+--->    this persons name is Tim, they are 25 years old and they are 6ft tall
+--->    this persons name is James, they are 44 years old and they are 5ft tall
