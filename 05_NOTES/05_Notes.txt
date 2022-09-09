@@ -228,3 +228,27 @@ inside the obj then the inner obj will still point to the same place in memory
 
 this only creates a shallow copy , not a deep clone 
 ex. if we had an array within the cloned obj, both would have the new arr, not just one 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Destructuring arrays (ES6) - a way of unpacking values from an array 
+into separate variables - to break a complex data structure down 
+into a variable
+
+const restaurant = {
+    name : 'classico italiano' ,
+    location : 'via angelo tavanti 23, firenze, italy' ,
+    catagories : ['italian','pizzaria','organic'] ,
+    startMenu : ['focaccia' , ' bruschetta' , 'bread'] ,
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+}
+
+//how we would retrieve these three elements 
+const arr = [2,3,4]
+//const a = arr[0]
+//const b = arr[1]
+//const b = arr[2]
+
+// with destructuring we can declare all three variables a the same time 
+const [x,y,z] = arr
+console.log(x,y,z)
+---> 2 3 4
