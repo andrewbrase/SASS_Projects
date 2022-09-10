@@ -505,11 +505,35 @@ console.log(menu)
 
 // ---> ['pizza', 'pasta', 'risotto', 'focaccia', 'bruschetta', 'bread']
 
+// the spread operator works on all iterables 
+// that means arrays, strings, maps, sets but NOT objects
 
+const name = 'andrew'
+const letters = [...name]
+console.log(letters)
+// --->  ['a', 'n', 'd', 'r', 'e', 'w']
+~~~~~~~~~~~~~~~~~~~~~~~
 
+const restaurant = {
+    name : 'classico italiano' ,
+    location : 'via angelo tavanti 23, firenze, italy' ,
+    catagories : ['italian','pizzaria','organic'] ,
+    startMenu : ['focaccia' , 'bruschetta' , 'bread'] ,
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
 
+    orderPasta : function(ingredient1 , ingredient2, ingredient3) {
+        console.log(`here\'s your pasta with ${ingredient1}, ${ingredient2}, ${ingredient3}`)
+    }
+}
 
+const ingredientsArr = ['olives','shrimp','cheese']
 
+// using the order pasta method in restaurant obj
+// using the spread operator to pass in all items in the array to the arguments of the method
+
+restaurant.orderPasta(...ingredientsArr)
+
+// ---> here's your pasta with olives, shrimp, cheese
 
 
 
