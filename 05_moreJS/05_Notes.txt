@@ -463,6 +463,22 @@ restaurant.orderDelivery ({
 --->
 ---> order recieved : bread and risotto will be deliverd to via del sole ,21 at time 10pm
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Spread Operator (...)
+can unpack all array elements at once
+
+const arr = [7, 8, 9];
+
+const newarr = [1 , 2, ...arr];
+console.log(newarr)
+
+---> [1, 2, 7, 8, 9]
+
+console.log(...newarr)
+---> 1 2 7 8 9
+
+// whenever you need the individual elements of an array use the spread operator
 
 
 
@@ -471,6 +487,33 @@ restaurant.orderDelivery ({
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Classes - blueprints for creating objects
 
@@ -521,6 +564,7 @@ James.displayInfo()
 //
 console.log(Tim.age) ---> 25
 console.log(James.age) ---> 44
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Inheritance
 
