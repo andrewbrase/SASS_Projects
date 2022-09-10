@@ -360,6 +360,117 @@ console.log(tags)
 // obj ---> {thursday: {…}, friday: {…}, saturday: {…}}
 // arr ---> ['italian', 'pizzaria', 'organic']
 
+// mutating variables
+let a = 111
+let b = 999
+
+const obj = {a : 23, b : 7, c : 14}
+
+// need ()
+({a,b} = obj)
+console.log(a,b)
+
+~~~~~~~~~~~
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14};
+({a, b} = obj);
+console.log(a, b);
+
+---> 23 7
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const restaurant = {
+    name : 'classico italiano' ,
+    location : 'via angelo tavanti 23, firenze, italy' ,
+    catagories : ['italian','pizzaria','organic'] ,
+    startMenu : ['focaccia' , ' bruschetta' , 'bread'] ,
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+
+    openingHours: {
+        thursday : {
+            open : 5,
+            close : 5,
+        },
+        friday : {
+            open : 5,
+            close : 4,
+        },
+        saturday : {
+            open : 8,
+            close : 12,
+        },
+    }
+}
+
+// netsed object destructuring
+//const {friday, saturday} = restaurant.openingHours
+//console.log(friday)
+//console.log(saturday)
+
+//--->
+//(fri) {open: 5, close: 4}
+//(sat) {open: 8, close: 12}
+
+const {friday: {open: o, close: c}, saturday: {open : so, close: sc} } = restaurant.openingHours;
+console.log(o,c)
+console.log(so,sc)
+
+---> 5 4
+---> 8 12
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+const restaurant = {
+    name : 'classico italiano' ,
+    location : 'via angelo tavanti 23, firenze, italy' ,
+    catagories : ['italian','pizzaria','organic'] ,
+    startMenu : ['focaccia' , ' bruschetta' , 'bread'] ,
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+
+    openingHours: {
+        thursday : {
+            open : 5,
+            close : 5,
+        },
+        friday : {
+            open : 5,
+            close : 4,
+        },
+        saturday : {
+            open : 8,
+            close : 12,
+        },
+    },
+
+    orderDelivery: function({ starterIndex, mainIndex, deliverytime, address}) {
+        console.log(`order recieved : ${this.startMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliverd to ${address} at time ${deliverytime}`)
+    },
+}
+
+// passing in an obj into a method of another obj
+// you can do destructuring right away
+// calling a method with an object
+
+restaurant.orderDelivery ({
+    deliverytime : '10pm',
+    address : 'via del sole ,21',
+    mainIndex: 2,
+    starterIndex: 2,
+})
+
+--->
+---> order recieved : bread and risotto will be deliverd to via del sole ,21 at time 10pm
+
+
+
+
+
+
+
+
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Classes - blueprints for creating objects
 
