@@ -337,20 +337,28 @@ const restaurant = {
 // to destructure obj use the curly braces
 // the order desn't matter for this
 
-const {name, openingHours, catagories} = restaurant
+// const {name, openingHours, catagories} = restaurant
 // three new variables created from the restaurant obj
 
-console.log(name)
-console.log(openingHours)
-console.log(catagories)
+// console.log(name)
+// console.log(openingHours)
+// console.log(catagories)
 
---->
+// --->
 
-string ---> classico italiano
-obj ---> {thursday: {…}, friday: {…}, saturday: {…}}
-arr ---> ['italian', 'pizzaria', 'organic']
+// string ---> classico italiano
+// obj ---> {thursday: {…}, friday: {…}, saturday: {…}}
+// arr ---> ['italian', 'pizzaria', 'organic']
 
+// you can rename the variables destructured
+const {name: restaurantName, openingHours: hours, catagories: tags} = restaurant
+console.log(restaurantName)
+console.log(hours)
+console.log(tags)
 
+// string ---> classico italiano
+// obj ---> {thursday: {…}, friday: {…}, saturday: {…}}
+// arr ---> ['italian', 'pizzaria', 'organic']
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Classes - blueprints for creating objects
