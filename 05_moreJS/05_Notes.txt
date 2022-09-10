@@ -480,16 +480,30 @@ console.log(...newarr)
 
 // whenever you need the individual elements of an array use the spread operator
 
+const restaurant = {
+    name : 'classico italiano' ,
+    location : 'via angelo tavanti 23, firenze, italy' ,
+    catagories : ['italian','pizzaria','organic'] ,
+    startMenu : ['focaccia' , 'bruschetta' , 'bread'] ,
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+}
 
+// we are creating a new arr, NOT mainipulating the existing arr
+// you could mainipulate the arr by using the push() method
 
+//const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+//console.log(newMenu)
 
+//---> ['pizza', 'pasta', 'risotto', 'Gnocci']
+// copy array
 
+//const mainMenuCopy = [...restaurant.mainMenu];
 
+// join 2 arrays or more
+const menu = [...restaurant.mainMenu, ...restaurant.startMenu]
+console.log(menu)
 
-
-
-
-
+// ---> ['pizza', 'pasta', 'risotto', 'focaccia', 'bruschetta', 'bread']
 
 
 
