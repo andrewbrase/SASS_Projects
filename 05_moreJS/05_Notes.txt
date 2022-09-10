@@ -506,7 +506,7 @@ console.log(menu)
 // ---> ['pizza', 'pasta', 'risotto', 'focaccia', 'bruschetta', 'bread']
 
 // the spread operator works on all iterables 
-// that means arrays, strings, maps, sets but NOT objects
+// that means arrays, strings, maps, sets
 
 const name = 'andrew'
 const letters = [...name]
@@ -535,8 +535,21 @@ restaurant.orderPasta(...ingredientsArr)
 
 // ---> here's your pasta with olives, shrimp, cheese
 
+~~~~~~~~~~~~~~~~~~~~~~~
+// you can use the spread operator on objects to create new objects 
 
+const restaurant = {
+    name : 'classico italiano' ,
+    location : 'via angelo tavanti 23, firenze, italy' ,
+    catagories : ['italian','pizzaria','organic'] ,
+    startMenu : ['focaccia' , 'bruschetta' , 'bread'] ,
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+}
 
+const newRest = {...restaurant, founder: 'Andrew'}
+console.log(newRest.mainMenu[1], newRest.founder)
+
+// ---> pasta, Andrew
 
 
 
