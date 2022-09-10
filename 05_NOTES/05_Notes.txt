@@ -243,15 +243,65 @@ const restaurant = {
 }
 
 //how we would retrieve these three elements 
-const arr = [2,3,4]
+//const arr = [2,3,4]
 //const a = arr[0]
 //const b = arr[1]
 //const b = arr[2]
 
 // with destructuring we can declare all three variables a the same time 
-const [x,y,z] = arr
-console.log(x,y,z)
----> 2 3 4
+//const [x,y,z] = arr
+//console.log(x,y,z)
+//---> 2 3 4
+
+//const [first, second] = restaurant.catagories;
+//console.log(first)
+//console.log(second)
+
+// ---> italian
+// ---> pizzaria
+
+// if you wanted to skip over the second element in the array 
+
+
+let [first, ,third] = restaurant.catagories;
+
+console.log(first, third)
+console.log(third)
+
+// ---> italian organic
+
+[first, third] = [third, first]
+console.log(first, third)
+
+// ---> organic italian
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+const restaurant = {
+    name : 'classico italiano' ,
+    location : 'via angelo tavanti 23, firenze, italy' ,
+    catagories : ['italian','pizzaria','organic'] ,
+    startMenu : ['focaccia' , ' bruschetta' , 'bread'] ,
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+
+    order : function(starterIndex, mainIndex) {
+        return [this.startMenu[starterIndex], this.mainMenu[mainIndex]]
+    }
+}
+
+// console.log(restaurant.order(2,0))
+// ---> ['bread', 'pizza']
+
+const [starter, main] = restaurant.order(2,0)
+console.log(starter,main)
+
+// ---> bread pizza
+
+nested destrucuring
+const nested = [2,4,[5,6]]
+const [i, ,[j,k]] = nested
+console.log(i,j,k)
+// ---> 2 5 6
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Classes - blueprints for creating objects
