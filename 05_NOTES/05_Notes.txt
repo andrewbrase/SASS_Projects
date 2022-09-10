@@ -297,11 +297,60 @@ console.log(starter,main)
 
 // ---> bread pizza
 
-nested destrucuring
+//nested destrucuring
 const nested = [2,4,[5,6]]
 const [i, ,[j,k]] = nested
 console.log(i,j,k)
 // ---> 2 5 6
+
+//default values
+const [p=1,q=1,r=1] = [8,9]
+console.log(p,q,r)
+
+// ---> 8 9 1 
+~~~~~~~~~~~~~~~~~~~~~~~
+Destructuring Objects 
+
+const restaurant = {
+    name : 'classico italiano' ,
+    location : 'via angelo tavanti 23, firenze, italy' ,
+    catagories : ['italian','pizzaria','organic'] ,
+    startMenu : ['focaccia' , ' bruschetta' , 'bread'] ,
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+
+    openingHours: {
+        thursday : {
+            open : 5,
+            close : 5,
+        },
+        friday : {
+            open : 5,
+            close : 4,
+        },
+        saturday : {
+            open : 8,
+            close : 12,
+        },
+    }
+}
+
+// to destructure obj use the curly braces
+// the order desn't matter for this
+
+const {name, openingHours, catagories} = restaurant
+// three new variables created from the restaurant obj
+
+console.log(name)
+console.log(openingHours)
+console.log(catagories)
+
+--->
+
+string ---> classico italiano
+obj ---> {thursday: {…}, friday: {…}, saturday: {…}}
+arr ---> ['italian', 'pizzaria', 'organic']
+
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Classes - blueprints for creating objects
