@@ -757,6 +757,8 @@ console.log(0 || true)
 console.log(undefined || null)
 // ---> null
 
+~~~
+Turnery Operator
 const restaurant = {}
 const guests = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests)
@@ -773,3 +775,10 @@ const newresult = 5 * 5 === 0 ? 0 : 25;
 console.log(newresult)
 
 // ---> 25
+
+// so instead of doing this we can take advantage of short circuiting and the OR operator
+const restaurant = {}
+const guests = restaurant.numGuests || 10
+console.log(guests)
+// ---> 10
+
