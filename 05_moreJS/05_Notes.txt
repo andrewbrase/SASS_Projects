@@ -600,15 +600,41 @@ console.log(otherfood)
 ---> pizza pasta
 ---> ['risotto', 'focaccia', 'bruschetta', 'bread']
 
+// This also works with objects as well
 
+// Objects 
 
+// created a restaurant obj with another obj named openingHours
+const restaurant = {
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+    startMenu : ['focaccia' , 'bruschetta' , 'bread'],
+    openingHours : {
+        thursday : {
+            open : '5am',
+            close : '5pm',
+        },
+        friday : {
+            open : '5am',
+            close : '3pm',
+        },
+        saturday : {
+            open : '8am',
+            close : '8pm',
+        },
+    },
+}
 
+// deconstructing restaurant.openingHours into saturday and also weekdays using the rest pattern
+const {saturday, ...weekdays} = restaurant.openingHours
 
+console.log(saturday.close)
+console.log(weekdays.thursday.close)
+console.log(weekdays.friday.close)
 
-
-
-
-
+// ---> 
+// 8pm
+// 5pm
+// 3pm
 
 
 
