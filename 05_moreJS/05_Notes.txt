@@ -571,12 +571,8 @@ console.log(others)
 ---> [3, 4, 5]
 
 
-
-
 *** REST - instructs the computer to add whatever otherInfo (arguments) supplied by the user into an array
 *** Spread - takes in an iterable (e.g an array) and expands it into individual elements
-
-
 
 
 Rest will take the rest of the elements of an arr and assign them to a new arr - used with destructuring
@@ -658,13 +654,7 @@ add(1,2, ...arr)
 ex. orderPizza : function( mainIngredient, ...otherIngredients) {
 }
 
-
-
-
-
-
-
-
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Classes - blueprints for creating objects
@@ -745,3 +735,24 @@ mycar = new Model('Ford','Mustang')
 mycar.show()
 ---> I have a Ford, it is a Mustang
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Short Circuiting (&& and ||)
+
+// and & or operators can return any data type, not just boolean
+
+/* in the case of the or operator short circuiting means that if 
+the first value is a truthy value it will immediately return the first value */
+
+console.log(3 || 'andrew')
+// ---> 3
+
+console.log(false || 'andrew')
+// ---> 'andrew'
+
+console.log('' || 'andrew')
+// ---> 'andrew'
+
+console.log(true || 0)
+// ---> true
+
+console.log(undefined || null)
+// ---> null
