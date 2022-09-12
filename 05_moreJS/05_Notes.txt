@@ -782,3 +782,8 @@ const guests = restaurant.numGuests || 10
 console.log(guests)
 // ---> 10
 
+~~~~~~~~~~~~~~~~~~~~~~~
+// the && operator will return the first falsy value
+
+console.log(0 && 'andrew')
+// ---> 0
