@@ -636,6 +636,27 @@ console.log(weekdays.friday.close)
 // 5pm
 // 3pm
 
+// for the spread operator, another use case was to pass multiple arguments into function all at the same time
+
+// use of rest operator to pack everything into one array 
+const add = function(...numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i]
+    }
+
+    console.log(sum)
+}
+
+let arr = [3,4,5,6,7,8,9]
+
+// use of spread operator
+add(1,2, ...arr)
+
+---> 45
+
+
+
 
 
 
