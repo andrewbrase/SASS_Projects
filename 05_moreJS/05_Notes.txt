@@ -751,8 +751,25 @@ console.log(false || 'andrew')
 console.log('' || 'andrew')
 // ---> 'andrew'
 
-console.log(true || 0)
+console.log(0 || true)
 // ---> true
 
 console.log(undefined || null)
 // ---> null
+
+const restaurant = {}
+const guests = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests)
+
+// restaurant.numGuests is undefined
+// ---> 10
+
+const result = 10 % 2 === 0 ? 'that is true' : 'that is false'
+console.log(result)
+
+// ---> 'that is true'
+
+const newresult = 5 * 5 === 0 ? 0 : 25;
+console.log(newresult)
+
+// ---> 25
