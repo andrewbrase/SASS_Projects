@@ -550,6 +550,59 @@ const newRest = {...restaurant, founder: 'Andrew'}
 console.log(newRest.mainMenu[1], newRest.founder)
 
 // ---> pasta, Andrew
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Rest Pattern and Parameters
+
+will collect multiple elements and condense them into the same array
+opposite of spread operator
+
+// RECAP of spread, the dots are on the Right side of the = sign
+const arr = [1,2,...[3,4]]
+
+// destructuring you can use REST operator syntax
+// LEFT side of the = sign
+const [a,b, ...others] = [1,2,3,4,5]
+console.log(a)
+console.log(b)
+console.log(others)
+
+---> 1
+---> 2
+---> [3, 4, 5]
+
+
+
+
+*** REST - instructs the computer to add whatever otherInfo (arguments) supplied by the user into an array
+*** Spread - takes in an iterable (e.g an array) and expands it into individual elements
+
+
+
+
+Rest will take the rest of the elements of an arr and assign them to a new arr - used with destructuring
+const [a,b, ...others] = [1,2,3,4,5]
+
+const restaurant = {
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+    startMenu : ['focaccia' , 'bruschetta' , 'bread'],
+}
+
+// using SPREAD and REST 
+// destructuring the main menu and startmenu using spread into variables pizza, pasta and using the REST operator to assign everything else to an arr
+// spread is used to assign everything from this array to a variable
+// rest is used to assign everything else in the array to a variable
+
+const [pizza, pasta, ...otherfood ] = [...restaurant.mainMenu, ...restaurant.startMenu]
+
+console.log(pizza, pasta)
+console.log(otherfood)
+
+---> pizza pasta
+---> ['risotto', 'focaccia', 'bruschetta', 'bread']
+
+
+
+
 
 
 
