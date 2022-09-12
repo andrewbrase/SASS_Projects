@@ -655,7 +655,8 @@ add(1,2, ...arr)
 
 ---> 45
 
-
+ex. orderPizza : function( mainIngredient, ...otherIngredients) {
+}
 
 
 
