@@ -798,3 +798,34 @@ const result = null ?? 'andrew'
 console.log(result)
 
 // ---> 'andrew'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Logical Assignment Operators
+
+const rest1 = {
+    name : 'Capri',
+    numGuest : 20,
+}
+
+const rest2 = {
+    name : 'La Piazza',
+    owner : 'Giovanni Rossi',
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+// The OR assignment operator
+
+// rest1.numGuest = rest1.numGuest || 10
+// ---> 20
+
+// numGuest is not in rest 2 obj making it falsy
+// rest2.numGuest = rest2.numGuest || 10
+// ---> 10
+
+// This can be written as 
+
+rest1.numGuest ||= 10
+// ---> 20
+
+rest2.numGuest ||= 10
+// ---> 10
+~~~~~~~~~~~~~~~~~~~~~~~~
