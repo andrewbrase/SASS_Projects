@@ -883,3 +883,73 @@ rest2.ownerName &&= 'anon'
 // (there is no ownerName in rest2)
 console.log(rest2)
 // ---> {food: 'pasta'}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Looping Arrays: The for-of Loop
+
+const restaurant = {
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+    startMenu : ['focaccia' , 'bruschetta' , 'bread'],
+}
+
+const menu = [...restaurant.mainMenu , ...restaurant.startMenu]
+
+//for (const food of menu) console.log(food)
+
+// --->
+//pizza
+//pasta
+//risotto
+//focaccia
+//bruschetta
+//bread
+
+// this method not as good getting the index
+
+//for (const item of menu.entries()) {
+    //console.log(item)
+    // this will make every element an array with the [index, value]
+//}
+
+// --->
+// [0, 'pizza']
+// [1, 'pasta']
+// [2, 'risotto']
+// [3, 'focaccia']
+// [4, 'bruschetta']
+// [5, 'bread']
+
+for (const item of menu.entries()) {
+    console.log(item[0])
+    // this will make every element an array with the [index, value]
+}
+
+// --->
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+
+
+// we can use destructuring to make this easier
+
+const restaurant = {
+    mainMenu : ['pizza' , 'pasta' , 'risotto' ],
+    startMenu : ['focaccia' , 'bruschetta' , 'bread'],
+}
+
+const menu = [...restaurant.mainMenu , ...restaurant.startMenu]
+
+for (const [index, element] of menu.entries()) {
+    console.log(`${index} : index , ${element} : element`)
+}
+
+// --->
+0 : index , pizza : element
+1 : index , pasta : element
+2 : index , risotto : element
+3 : index , focaccia : element
+4 : index , bruschetta : element
+5 : index , bread : element
