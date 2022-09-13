@@ -1006,3 +1006,28 @@ console.log(restaurant.openingHours.mon?.open)
 we can do the same for opening hours
 console.log(restaurant.openingHours?.tue?.open)
 // ---> 5am
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+// going to loop through an array of days to see if the restaurant is open
+const days = ['mon','tue','wed','thu','fri','sat','sun'];
+
+for (const day of days) {
+    const isOpen = restaurant.openingHours[day]?.open || 'closed'
+    console.log(`on ${day}, we open at : ${isOpen}`)
+}
+
+// --->
+on mon, we open at : closed
+on tue, we open at : 5am
+on wed, we open at : 5am
+on thu, we open at : 5am
+on fri, we open at : 5am
+on sat, we open at : 5am
+on sun, we open at : 5am
+
+// the problem with this is that 0 is a falsy value -  if open was set to 0
+// so it will trigger the second part of the operator
+// - the solution is to use the nullish coalescing operator
+
+    const isOpen = restaurant.openingHours[day]?.open ?? 'closed'
+
