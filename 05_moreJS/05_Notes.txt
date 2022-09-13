@@ -811,8 +811,9 @@ const rest2 = {
     owner : 'Giovanni Rossi',
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~
 // The OR assignment operator
+// this operator assigns a value to a variable if that variable is currently falsy 
 
 // rest1.numGuest = rest1.numGuest || 10
 // ---> 20
@@ -828,4 +829,57 @@ rest1.numGuest ||= 10
 
 rest2.numGuest ||= 10
 // ---> 10
+
+console.log(rest1)
+console.log(rest2)
+
+{name: 'Capri', numGuest: 20}
+
+//                                               !!!
+{name: 'La Piazza', owner: 'Giovanni Rossi', numGuest: 10}
+
 ~~~~~~~~~~~~~~~~~~~~~~~~
+The Nullish Assignment Operator (nullish means null or undefined)
+// assign a value to a variable if that variable is currently nullish
+
+rest1 = {
+    numGuest : 0
+}
+
+rest2 = {
+    name : 'andrew'
+}
+
+rest1.numGuest ??= 10;
+rest2.numGuest ??= 10;
+
+console.log(rest1)
+console.log(rest2)
+
+// --->
+{numGuest: 0}
+{name: 'andrew', numGuest: 10}
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+The AND assignment Operator
+// is there currently is an owner, you could anonymize the name
+//  assign a value to a variable if it is currently truthy (it exists)
+
+rest1 = {
+    ownerName : 'andrew'
+}
+
+rest2 = {
+    food : 'pasta'
+}
+
+// rest1.ownerName &&= 'anon'
+// console.log(rest1)
+// ---> {ownerName: 'anon'}
+
+rest2.ownerName &&= 'anon'
+// ---> undefined
+// (there is no ownerName in rest2)
+console.log(rest2)
+// ---> {food: 'pasta'}
