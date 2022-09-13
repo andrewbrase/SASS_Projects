@@ -953,3 +953,56 @@ for (const [index, element] of menu.entries()) {
 3 : index , focaccia : element
 4 : index , bruschetta : element
 5 : index , bread : element
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Optional Chaining (.?)
+// feature of objects and arrays
+
+const restaurant = {
+    openingHours : {
+        // missing Monday
+        tue : {
+            open : '5am',
+            close : '5pm',
+        },
+        wed : {
+            open : '5am',
+            close : '5pm',
+        },
+        thu : {
+            open : '5am',
+            close : '5pm',
+        },
+        fri : {
+            open : '5am',
+            close : '3pm',
+        },
+        sat : {
+            open : '5am',
+            close : '10pm',
+        },
+        sun : {
+            open : '5am',
+            close : '10pm',
+        },
+    },
+};
+console.log(restaurant.openingHours?.tue?.open)
+
+console.log(restaurant.openingHours.mon.open)
+// ---> Cannot read properties of undefined
+
+// this is just checking for ONE property Monday
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open)
+
+// with Optional chaining, if a certain property does not exist, 
+// then undefined is returned immediately 
+
+// WITH optional chaining 
+// only if monday? exists then the open property will be read, if not undefined will be returned
+
+console.log(restaurant.openingHours.mon?.open)
+// ---> undefined
+
+we can do the same for opening hours
+console.log(restaurant.openingHours?.tue?.open)
+// ---> 5am
