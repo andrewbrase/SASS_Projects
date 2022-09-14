@@ -1144,3 +1144,32 @@ on thu we open at 5am and close at 5pm
 on fri we open at 5am and close at 3pm
 on sat we open at 5am and close at 10pm
 on sun we open at 5am and close at 10pm
+
+~~~ All together ~~~
+
+const restaurant = {
+    openingHours : {
+        mon : {
+            open : '5am',
+            close : '5pm',
+        },
+        tue : {
+            open : '5am',
+            close : '5pm',
+        },
+        wed : {
+            open : '5am',
+            close : '5pm',
+        },
+    },
+};
+
+const entries = Object.entries(restaurant.openingHours)
+for (const [key , {open, close}] of entries) {
+    console.log(`on ${key} we open at ${open} and close at ${close}`)
+}
+
+// --->
+on mon we open at 5am and close at 5pm
+on tue we open at 5am and close at 5pm
+on wed we open at 5am and close at 5pm
