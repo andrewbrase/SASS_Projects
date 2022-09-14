@@ -1207,3 +1207,24 @@ for (const flavor of Object.keys(iceCream.flavors)){
 mint
 strawberry
 chocolate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sets 
+
+const arr = ['andrew','andrew','bob','dave','andrew','dave']
+const set = new Set(arr)
+// console.log(set)
+// --->
+// {'andrew', 'bob', 'dave'}
+
+console.log(set.size)
+// sets use size not length
+// ---> 3
+
+// sets can use the HAS method to see if they are included in that set 
+console.log(set.has('andrew'))
+// ---> true 
+
+// the ADD method
+set.add('steve')
+// --->
+{'andrew', 'bob', 'dave', 'steve'}
