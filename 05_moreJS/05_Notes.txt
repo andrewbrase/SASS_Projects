@@ -1173,3 +1173,28 @@ for (const [key , {open, close}] of entries) {
 on mon we open at 5am and close at 5pm
 on tue we open at 5am and close at 5pm
 on wed we open at 5am and close at 5pm
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const iceCream = {
+    flavors : {
+        mint : {
+            status : 'out of stock'
+        },
+        strawberry : {
+            status : 'available'
+        },
+        chocolate : {
+            status : 'almost gone'
+        },
+    },
+};
+
+const iceCreamEntries = Object.entries(iceCream.flavors)
+for (const [flavor, {status}] of iceCreamEntries){
+    console.log(`the flavor ${flavor} is ${status}`)
+}
+
+// --->
+the flavor mint is out of stock
+the flavor strawberry is available
+the flavor chocolate is almost gone
