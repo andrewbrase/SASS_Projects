@@ -1198,3 +1198,12 @@ for (const [flavor, {status}] of iceCreamEntries){
 the flavor mint is out of stock
 the flavor strawberry is available
 the flavor chocolate is almost gone
+
+for (const flavor of Object.keys(iceCream.flavors)){
+    console.log(flavor)
+}
+
+// --->
+mint
+strawberry
+chocolate
