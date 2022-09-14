@@ -1031,3 +1031,116 @@ on sun, we open at : 5am
 
     const isOpen = restaurant.openingHours[day]?.open ?? 'closed'
 
+~~~~~~~~~~~~~~~~~~~~~~~~
+Optional Chaining on Methods
+// we can check if a method exists before calling it
+
+const restaurant = {
+    order : function(a,b) {
+        console.log(a+b)
+    }
+}
+
+console.log(restaurant.order?.(1,2) ?? 'Method does not exist')
+
+const users = [{ name: 'andrew', email : 'andrewbrase1'}]
+console.log(users[0]?.name ?? 'user array empty')
+// ---> andrew 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Looping Objects: Object Keys, Values, and Entries
+
+const restaurant = {
+
+    openingHours : {
+        mon : {
+            open : '5am',
+            close : '5pm',
+        },
+        tue : {
+            open : '5am',
+            close : '5pm',
+        },
+        wed : {
+            open : '5am',
+            close : '5pm',
+        },
+        thu : {
+            open : '5am',
+            close : '5pm',
+        },
+        fri : {
+            open : '5am',
+            close : '3pm',
+        },
+        sat : {
+            open : '5am',
+            close : '10pm',
+        },
+        sun : {
+            open : '5am',
+            close : '10pm',
+        }
+    }
+}
+
+//for (const day of Object.keys(restaurant.openingHours)) {
+//    console.log(day)
+//}
+
+// --->
+//mon
+//tue
+//wed
+//thu
+//fri
+//sat
+//sun
+
+const properties = Object.keys(restaurant.openingHours)
+console.log(properties)
+// ---> ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+
+let openStr = `We are open on ${properties.length} days: `
+for (const day of properties) {
+    openStr += `${day}, `
+}
+
+// ---> 'We are open on 7 days: mon, tue, wed, thu, fri, sat, sun, '
+
+// property values
+const values = Object.values(restaurant.openingHours)
+console.log(values)
+
+// --->
+0: {open: '5am', close: '5pm'}
+1: {open: '5am', close: '5pm'}
+2: {open: '5am', close: '5pm'}
+3: {open: '5am', close: '5pm'}
+4: {open: '5am', close: '3pm'}
+5: {open: '5am', close: '10pm'}
+6: {open: '5am', close: '10pm'}
+length: 7
+
+// entries are names plus the values together
+const entries = Object.entries(restaurant.openingHours)
+console.log(entries)
+
+// --->
+// 0: "mon"
+// 1: {open: '5am', close: '5pm'}
+// (etc.)
+
+//we can use destructuring to define these open close times as well as the day
+for (const [key , {open, close}] of entries) {
+    console.log(`on ${key} we open at ${open} and close at ${close}`)
+}
+
+// --->
+on mon we open at 5am and close at 5pm
+on tue we open at 5am and close at 5pm
+on wed we open at 5am and close at 5pm
+on thu we open at 5am and close at 5pm
+on fri we open at 5am and close at 3pm
+on sat we open at 5am and close at 10pm
+on sun we open at 5am and close at 10pm
