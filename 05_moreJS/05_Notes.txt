@@ -1327,4 +1327,11 @@ rest.set(arr, 'test')
 console.log(rest.get(arr))
 
 // ---> test
+
+// you can also integrate DOM elements into the Map object
+
+rest.set(document.querySelector('h1'), 'Heading');
+// key: h1
+// value: 'Heading'
+ 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
