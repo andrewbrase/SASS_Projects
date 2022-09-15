@@ -1333,5 +1333,33 @@ console.log(rest.get(arr))
 rest.set(document.querySelector('h1'), 'Heading');
 // key: h1
 // value: 'Heading'
- 
+
+// set can be combersome if there are a lot of values to add to the Map
+// there will be arrays with the first value being the key
+const quiz = new Map([
+    ['question','what is the best programming language'],
+    [1, 'C language'],
+    [2, 'Java'],
+    [3, 'Javascript'],
+    ['correct', 3],
+
+    // when the user is correct
+    [true , 'correct'],
+    [false , 'try again'],
+])
+
+console.log(quiz)
+
+// ---> 
+{"question" => "what is the best programming language"}
+key: "question"
+value: "what is the best programming language"
+
+{1 => "C language"}
+2: {2 => "Java"}
+3: {3 => "Javascript"}
+4: {"correct" => 3}
+5: {true => "correct"}
+6: {false => "try again"}
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
