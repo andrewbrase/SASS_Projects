@@ -1362,4 +1362,53 @@ value: "what is the best programming language"
 5: {true => "correct"}
 6: {false => "try again"}
 
+~~~~~~~~~~~~~~~~~~
+// converting objects to Map
+
+const iceCream = {
+    flavors : {
+        mint : {
+            status : 'out of stock'
+        },
+        strawberry : {
+            status : 'available'
+        },
+        chocolate : {
+            status : 'almost gone'
+        },
+    },
+};
+
+// console.log(Object.entries(iceCream.flavors))
+const iceCreamMap = new Map(Object.entries(iceCream.flavors))
+
+console.log(iceCreamMap)
+//~~~~~~~~~~~~~~~~~~
+//Iteration on Maps
+// the for loop is available for use
+
+const quiz = new Map([
+    ['question','what is the best programming language?'],
+    [1, 'C'],
+    [2, 'Java'],
+    [3, 'Javascript'],
+    ['correct', 3],
+
+    // when the user is correct
+    [true , 'correct'],
+    [false , 'try again'],
+])
+
+// the for loop is available for use
+console.log(quiz.get('question'))
+for (const [key, value] of quiz){
+    if( typeof key === 'number') console.log(`Answer ${key} : ${value}`)
+}
+
+// ---> 
+what is the best programming language?
+Answer 1 : C
+Answer 2 : Java
+Answer 3 : Javascript
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
