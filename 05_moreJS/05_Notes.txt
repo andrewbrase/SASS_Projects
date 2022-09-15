@@ -1228,6 +1228,103 @@ console.log(set.has('andrew'))
 set.add('steve')
 // --->
 {'andrew', 'bob', 'dave', 'steve'}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-hello
+//.delete('bob')
+
+//.clear()
+
+const staff = ['waiter','chef','waiter','waiter','manager']
+// const staffUnique = new Set(staff)
+// console.log(staffUnique)
+// --->
+// {'waiter', 'chef', 'manager'}
+
+const staffUnique = [...new Set(staff)]
+console.log(staffUnique)
+
+// creates an array of all of the set elements
+// ---> ['waiter', 'chef', 'manager']
+
+new Set(['waiter','chef','waiter','waiter','manager']).size
+// ---> 3
+
+console.log(new Set('andrewbrase').size);
+// ---> 8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Maps Fundamentals
+// the keys do not need to be strings 
+
+const rest = new Map();
+
+//use the set method, pass in two arguments - the first will be the keyname
+// rest.set('name','Classico Italiano');
+// rest.set(1, 'Italy');
+// rest.set(2, 'Lisbon');
+
+rest
+    .set('catagories', ['italian','pizzaria','organic'])
+    .set('open',11)
+    .set('close',5);
+
+{"catagories" => 
+1: {"open" => 11}
+2: {"close" => 5}
+
+// the keys do not need to be strings 
+
+const rest = new Map();
+
+rest
+    .set('catagories', ['italian','pizzaria','organic'])
+    .set('open',11)
+    .set('close',23)
+    .set(true, 'we are open')
+    .set(false, 'we are closed')
+    .set(1, 'Italy')
+    .set(2, 'Lisbon')
+
+// to read data from a map we can use the get method
+
+// console.log(rest.get(true))
+
+// ---> 
+// we are open
+
+// const time = 23;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')))
+// ---> we are closed
+
+// we can check if a map has a certain key with the HAS method
+// console.log(rest.has('Halloween'))
+// ---> false
+// console.log(rest.has('catagories')
+// ---> true
+
+// get rid of Lisbon
+// rest.delete(2)
+// console.log(rest)
+
+// ---> 
+// {"catagories" => Array(3)}
+// 1: {"open" => 11}
+// 2: {"close" => 23}
+// 3: {true => "we are open"}
+// 4: {false => "we are closed"}
+// 5: {1 => "Italy"}
+
+// maps can also use size
+console.log(rest.size)
+// ---> 7
+
+// maps can also use clear
+rest.clear()
+
+// for setting an array as a key
+
+const rest = new Map();
+const arr = [1,2]
+rest.set(arr, 'test')
+console.log(rest.get(arr))
+
+// ---> test
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
