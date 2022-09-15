@@ -1405,6 +1405,11 @@ for (const [key, value] of quiz){
     if( typeof key === 'number') console.log(`Answer ${key} : ${value}`)
 }
 
+const answer = prompt('Your answer')
+
+quiz.get(quiz.get('correct') === answer)
+// this will return true or false which we can use in the Map
+
 // ---> 
 what is the best programming language?
 Answer 1 : C
