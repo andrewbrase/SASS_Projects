@@ -1455,3 +1455,7 @@ const checkBaggage = function(items){
 checkBaggage('I have a laptop, some food and a pocket knife')
 
 // ---> not allowed on flight
+
+const str = 'this+string'
+console.log(str.split('+').join(' '))
+// ---> this string
