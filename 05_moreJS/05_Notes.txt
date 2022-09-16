@@ -1418,9 +1418,40 @@ Answer 3 : Javascript
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Working with strings
+// Javascript String is immutable, you'd have to create a new variable
 
 string.slice(1, 8) // starts at index 1 - ends at 8
 string.toUpperCase()
 string.toLowerCase()
 string.trim()
 string.replace('a','b')
+string.replaceAll()
+
+// use regular expression to tell the replace method to target all occurrences of 'door'
+console.log(string.replace( /door/g , 'gate' ))
+
+const plane = 'A230n'
+// console.log(plane.includes('A230'))
+// ---> true
+
+console.log(plane.startsWith('A'))
+// ---> true
+
+const newPlane = 'Airbus A320neo'
+if ( newPlane.startsWith('Airbus') && newPlane.endsWith('neo')) {
+    // if true , true
+    console.log('this is an airbus neo')
+}
+
+const checkBaggage = function(items){
+    const baggage = items.toLowerCase()
+    if (baggage.includes('knife')) {
+        console.log('not allowed on flight')
+    } else {
+        console.log('welcome aboard')
+    }
+}
+
+checkBaggage('I have a laptop, some food and a pocket knife')
+
+// ---> not allowed on flight
