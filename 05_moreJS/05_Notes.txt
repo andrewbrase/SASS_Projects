@@ -1417,3 +1417,10 @@ Answer 2 : Java
 Answer 3 : Javascript
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Working with strings
+
+string.slice(1, 8) // starts at index 1 - ends at 8
+string.toUpperCase()
+string.toLowerCase()
+string.trim()
+string.replace('a','b')
