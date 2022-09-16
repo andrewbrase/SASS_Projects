@@ -1482,3 +1482,13 @@ maskCreditCard(121234234231423)
 
 // ---> 
 ***********1423
+
+// repeat method
+// repeat the same string multiple times
+
+const rep = 'repeat'
+
+console.log(rep.repeat(5))
+
+// ---> 
+repeatrepeatrepeatrepeatrepeat
