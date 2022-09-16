@@ -1459,3 +1459,26 @@ checkBaggage('I have a laptop, some food and a pocket knife')
 const str = 'this+string'
 console.log(str.split('+').join(' '))
 // ---> this string
+
+const [firstname, lastname] = 'Andrew Brase'.split(' ')
+console.log(firstname)
+// ---> Andrew
+
+// add padding to a string
+const str = 'Andrew'
+console.log(str.padStart(20, ' '))
+// --->               Andrew
+// will make the string 20 characters long
+
+const maskCreditCard = function(number) {
+    // converts to string
+    const str = number + '';
+    const last = str.slice(-4)
+    console.log(last.padStart(str.length, '*'))
+
+}
+
+maskCreditCard(121234234231423)
+
+// ---> 
+***********1423
