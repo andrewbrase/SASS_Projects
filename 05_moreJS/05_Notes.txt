@@ -1608,8 +1608,8 @@ First-Class and Higher-Order functions
 javascript treats functions as values 
 functions are just another "type" of object
 
-since functions are values, we can store them 
-in variables or object properties
+since functions are values, 
+* we can store them in variables or object properties
 
 ex. const add = (a, b) => a + b;
 ex. const counter = {
@@ -1618,5 +1618,50 @@ ex. const counter = {
         this.value++;
     }
 }
+
+~~~~~~~~~~~~~~~~~~~~~~~
+* we can also pass functions as arguments
+
+const greet = () = > console.log('hello andrew');
+btnClose.addEventListener('click', greet)
+
+* we can also return functions from functions
+
+* there are methods that we can use on functions
+counter.inc.bind(someOtherObject);
+* the BIND method
+
+*/
+/*
+~~~~~~~~~~~~~~~~~~~~~~~
+Higher Order Functions
+* A function that recievs another function as 
+an argument, that returns a new function, or both
+
+const greet = () = > console.log('hello andrew');
+btnClose.addEventListener('click', greet)
+
+(accepting a function as an input & Callback Function)
+1.)
+* addEventListener is a higher order function that accepts the greet arg/function
+* the function passed is is usually a callback function becuase
+it is waiting for the click event to happen to call the greet
+- do not greet until click
+
+2.)
+(Function that returns a new fnction)
+
+(Higher Order Function)
+function count() {
+    let counter = 0;
+    return function() {
+        counter ++;
+    };
+}
+
+* FIRST CLASS functions is just a feature that a programming
+language has/doesn't have - All Functions are Values
+
+* HIGHER ORDER FUNCTIONS
 */
 
