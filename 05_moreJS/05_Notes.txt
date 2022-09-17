@@ -1683,3 +1683,5 @@ const transformer = function (str,func) {
 
 transformer('learning javascript is fun', upperFirstWord)
 // ---> LEARNING javascript is fun
+
+// upperFirstWord would be the callback function
