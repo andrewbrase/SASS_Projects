@@ -1561,3 +1561,34 @@ const createBooking = function (
 createBooking('LH132',33)
 
 // ---> {flightNum: 'LH132', numPassengers: 33, price: 232}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How Passing Arguments Works: Value vs. Reference
+
+const flight = 'LH234'
+const andrew = {
+    name : 'andrew',
+    passport : 345298342,
+}
+
+const checkIn = function(flightNum, passenger) {
+    // flight has changed
+    flightNum = 'LH553';
+    passenger.name = 'Mr.' + passenger.name;
+
+    if (passenger.passport === 345298342) {
+        console.log('check in')
+    } else {
+        console.log('wrong passport number')
+    }
+}
+
+checkIn(flight, andrew);
+console.log(flight)
+console.log(andrew)
+
+// none of the variables were changed after going through the function
+// ---> 
+check in
+LH234
+{name: 'Mr.andrew', passport: 345298342}
