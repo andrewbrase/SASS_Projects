@@ -1492,3 +1492,72 @@ console.log(rep.repeat(5))
 
 // ---> 
 repeatrepeatrepeatrepeatrepeat
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Default Parameters
+
+'use strict';
+
+const bookings = []
+
+const createBooking = function ( flightNum, numPassengers, price ) {
+    const bookingInfo = {
+        flightNum,
+        numPassengers,
+        price,
+    }
+
+    console.log(bookingInfo)
+    bookings.push(bookingInfo)
+}
+
+createBooking('LH132')
+
+// ---> 
+{flightNum: 'LH132', 
+numPassengers: undefined, 
+price: undefined}
+
+~~~~~~~~~~~~~~~~~~~~~~~
+*** OLD way of defining default parameters
+
+const createBooking = function ( flightNum, numPassengers, price ) {
+
+    //es5
+    //*** using short circuiting
+    //numPassengers = numPassengers || 1;
+    //price = price || 199;
+
+    const bookingInfo = {
+        flightNum,
+        numPassengers,
+        price,
+    }
+
+    console.log(bookingInfo)
+    bookings.push(bookingInfo)
+}
+
+You could do this instead
+
+const createBooking = function ( flightNum =1, numPassengers = 1, price =1) {
+
+~~~~~~~~~~~~~~~~~~~~~~~
+const bookings = []
+
+const createBooking = function ( 
+    flightNum = 1 , 
+    numPassengers = 1, 
+    price = 199 + numPassengers) {
+    const bookingInfo = {
+        flightNum,
+        numPassengers,
+        price,
+    }
+
+    console.log(bookingInfo)
+    bookings.push(bookingInfo)
+}
+
+createBooking('LH132',33)
+
+// ---> {flightNum: 'LH132', numPassengers: 33, price: 232}
