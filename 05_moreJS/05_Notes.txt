@@ -1587,7 +1587,8 @@ checkIn(flight, andrew);
 console.log(flight)
 console.log(andrew)
 
-// none of the variables were changed after going through the function
+// the primitive type was not chaged however 
+// the object/ reference type was ('Mr.andrew')
 // ---> 
 check in
 LH234
