@@ -1587,9 +1587,36 @@ checkIn(flight, andrew);
 console.log(flight)
 console.log(andrew)
 
-// the primitive type was not chaged however 
-// the object/ reference type was ('Mr.andrew')
+/* 
+ the primitive type was not chaged however 
+ the object/ reference type was ('Mr.andrew')
+ the flight number is a copy of the flight value
+ flightNum = flight
+ wehen we pass a refernce type into a function
+ what is copied is the reference to thte copy in the memory heap
+ passenger = andrew 
+*/
+
 // ---> 
 check in
 LH234
 {name: 'Mr.andrew', passport: 345298342}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+First-Class and Higher-Order functions
+
+/* 
+javascript treats functions as values 
+functions are just another "type" of object
+
+since functions are values, we can store them 
+in variables or object properties
+
+ex. const add = (a, b) => a + b;
+ex. const counter = {
+    value : 23,
+    inc : function() {
+        this.value++;
+    }
+}
+*/
+
