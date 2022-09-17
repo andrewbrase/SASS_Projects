@@ -1665,3 +1665,21 @@ language has/doesn't have - All Functions are Values
 * HIGHER ORDER FUNCTIONS
 */
 
+const oneWord = function(str) {
+    return str.replace(/ /g, '').toLowerCase();
+}
+// oneWord('Andrew M Brase')
+// ---> andrewmbrase
+
+const upperFirstWord = function(str) {
+    const [firstWord, ...otherWords] = str.split(' ');
+    return [firstWord.toUpperCase(), ...otherWords].join(' ')
+}
+
+// we can create our Higher Order Function with these two generic functions
+const transformer = function (str,func) {
+    console.log(func(str))
+}
+
+transformer('learning javascript is fun', upperFirstWord)
+// ---> LEARNING javascript is fun
