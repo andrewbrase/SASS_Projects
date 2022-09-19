@@ -1687,3 +1687,20 @@ transformer('learning javascript is fun', upperFirstWord)
 // upperFirstWord would be the callback function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Functions Returning Functions
+
+const greet = function(greeting) {
+    return function(name) {
+        console.log(`${greeting} ${name}`);
+    }
+}
+
+const greetHey = greet('Hey');
+
+//greetHey('andrew');
+// ---> Hey andrew
+// this works becuase it is a closure
+
+greet('hello')('Andrew')
+// ---> hello Andrew
+/* functions returning other functions can be useful in
+some situations especially with functional programming*/
