@@ -1715,6 +1715,9 @@ greetArr('hi')('andy')
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The call and apply Methods
 
+~~~~~~~~~~~~~~~~~~~~~~~~
+The Call Method
+
 const luft = {
     airline : 'Luft',
     code : 'LH',
@@ -1762,7 +1765,30 @@ they are Call, Apply and Bind */
 
 bookFlight.call(luft, 239, 'Steven')
 // ---> 
-Steven booked a seat on LuftLH flight number 239
+//Steven booked a seat on LuftLH flight number 239
+// the this keyword has been set to luft
 
-// you can have seperate objects that can reuse the same method
+/* you can have seperate objects that can reuse the same method
+you can manipulate the this keyword with the call method
+you must have the same property names */
 
+//~~~~~~~~~~~~~~~~~~~~~~~
+//The Apply Method
+/* apply does close to what call does except,
+Apply does not recieve a list of arguments after the
+this keyword, but instead its going to take an array of elements 
+and pass it into the function
+*/
+
+// passing the flightData array into the second arg
+const flightData = [544, 'Fred'];
+bookFlight.apply(eurowings, flightData);
+
+// ---> 
+Fred booked a seat on EuroEW flight number 544
+
+// instead of using apply we can use call and then we can use
+the spread operator instead
+
+// !!! this is the same result
+bookFlight.call( eurowings, ...flightData )
