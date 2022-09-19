@@ -1685,3 +1685,5 @@ transformer('learning javascript is fun', upperFirstWord)
 // ---> LEARNING javascript is fun
 
 // upperFirstWord would be the callback function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Functions Returning Functions
