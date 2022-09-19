@@ -1714,3 +1714,48 @@ greetArr('hi')('andy')
 // ---> hi andy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The call and apply Methods
+
+const luft = {
+    airline : 'Luft',
+    code : 'LH',
+    bookings : [],
+    book(flightNum, passengerName) {
+        console.log(`${passengerName} booked a seat on ${this.airline}${this.code} flight number ${flightNum}`)
+
+        this.bookings.push({ flight: `${flightNum}${this.code}`, passengerName })
+    }
+}
+
+//luft.book(122,'Andrew')
+//console.log(luft)
+
+// ---> 
+//Andrew booked a seat on LuftLH flight number 122
+
+// ---> 
+//bookings: 
+//0: {flight: '122LH', passengerName: 'Andrew'}
+
+const eurowings = {
+    airline : 'Euro',
+    code : 'EW',
+    bookings : [],   
+}
+
+/* instead of copying the method from the first obj,
+we can store it in an external function and reuse 
+that function for any other objects */
+
+const bookFlight = luft.book;
+
+/* if we want to book a luft flight the this keyword should point to luft
+if we want to book a euro flight the this keyword should point to euro
+there are 3 function methods to do that,
+they are Call, Apply and Bind */
+
+bookFlight.call(eurowings, 443, 'Dan')
+console.log(eurowings.bookings[0])
+
+/* ---> 
+{flight: '443EW', passengerName: 'Dan'}
+*/
