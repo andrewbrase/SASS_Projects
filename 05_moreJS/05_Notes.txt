@@ -1753,9 +1753,16 @@ if we want to book a euro flight the this keyword should point to euro
 there are 3 function methods to do that,
 they are Call, Apply and Bind */
 
-bookFlight.call(eurowings, 443, 'Dan')
-console.log(eurowings.bookings[0])
+//bookFlight.call(eurowings, 443, 'Dan')
+//console.log(eurowings.bookings[0])
 
 /* ---> 
 {flight: '443EW', passengerName: 'Dan'}
 */
+
+bookFlight.call(luft, 239, 'Steven')
+// ---> 
+Steven booked a seat on LuftLH flight number 239
+
+// you can have seperate objects that can reuse the same method
+
