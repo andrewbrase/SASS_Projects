@@ -1878,3 +1878,13 @@ newFlightGeorgia('Stan','Keening');
 Ann Jaime has boarded flight to puerto rico on aircraft EW122
 Jeffery Wells has boarded flight to georgia on aircraft EW331
 Stan Keening has boarded flight to georgia on aircraft EW331
+
+// using this in a DOM example 
+luft.planes = 300;
+lift.buyPlane = function() {
+    this.planes++;
+    console.log(this.planes);
+}
+
+// when you click the buy plane button, the method buyPlane in luft obj will execute
+document.querySelector('.buyPlaneButtonClass').addEventListener('click', luft.buyPlane)
