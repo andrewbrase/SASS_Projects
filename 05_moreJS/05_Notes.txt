@@ -1792,3 +1792,10 @@ the spread operator instead
 
 // !!! this is the same result
 bookFlight.call( eurowings, ...flightData )
+
+
+/* 
+Call invokes the function immediately and allows you to pass in arguments one by one
+Apply invokes the function immediately and allows you to pass in arguments as an array.
+Bind returns a new function, and you can invoke/call it anytime you want by invoking a function.
+*/
