@@ -1799,3 +1799,40 @@ Call invokes the function immediately and allows you to pass in arguments one by
 Apply invokes the function immediately and allows you to pass in arguments as an array.
 Bind returns a new function, and you can invoke/call it anytime you want by invoking a function.
 */
+
+let name = {
+    firstname : 'Andrew',
+    lastname : 'Brase',
+}
+
+printInfoFunc = function( hometown, state) {
+    console.log( this.firstname + ' ' + this.lastname + ', ' + hometown + ', ' + state );
+}
+
+//*the first argument e.g name inside call method is always a reference to (this) variable and latter will be function variable
+
+printInfoFunc.call(name, 'Saint Louis' , 'MO');
+// ---> Andrew Brase, Saint Louis, MO
+
+//*apply method is same as the call method the only diff is that, the function arguments are passed in ARRAY list
+printInfoFunc.apply(name, ['Saint Louis' , 'MO']);
+
+//*bind method is same as call except that ,the bind returns a function that can be used later by invoking it (does'nt call it immediately)
+let newPrintName = printInfoFunc.bind(name, 'Saint Louis' , 'MO');
+newPrintName();
+
+// full example of bind ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+let name = {
+    firstname : 'Andrew',
+    lastname : 'Brase',
+}
+
+printInfoFunc = function( hometown, state) {
+    console.log( this.firstname + ' ' + this.lastname + ', ' + hometown + ', ' + state );
+}
+
+let newPrintName = printInfoFunc.bind(name, 'Saint Louis' , 'MO');
+newPrintName();
+
+Andrew Brase, Saint Louis, MO
