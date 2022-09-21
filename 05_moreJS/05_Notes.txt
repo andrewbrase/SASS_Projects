@@ -1841,4 +1841,13 @@ let newPrintName = printInfoFunc.bind(name);
 newPrintName('Saint Louis' , 'MO');
 // ---> Andrew Brase, Saint Louis, MO
 
+
+//if you want to use the same function and flight number but with different people you could just do this
+ex.
+const bookEW = bookFunc.bind(eurowings, 23)
+bookEW('Andrew Brase')
+bookEW('Hannah Gallag')
+
+// specifying parts of the argument beforeheand is called partial application, 
+// part of the arguments of the original function are already applied
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
