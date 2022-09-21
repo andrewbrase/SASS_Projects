@@ -1870,8 +1870,8 @@ printFlightInfo = function( firstname, lastname) {
 let newFlightPuerto = printFlightInfo.bind(puertoRicoFlight);
 let newFlightGeorgia = printFlightInfo.bind(georgiaFlight);
 
-newFlightPuerto('Ann' , 'Jaime');
-newFlightGeorgia('Jeffery' , 'Wells');
+newFlightPuerto('Ann','Jaime');
+newFlightGeorgia('Jeffery','Wells');
 newFlightGeorgia('Stan','Keening');
 
 // ---> 
