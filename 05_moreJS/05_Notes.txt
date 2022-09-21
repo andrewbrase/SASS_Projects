@@ -1821,7 +1821,8 @@ printInfoFunc.apply(name, ['Saint Louis' , 'MO']);
 let newPrintName = printInfoFunc.bind(name, 'Saint Louis' , 'MO');
 newPrintName();
 
-// full example of bind ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~ full example of bind ~~~
+// bind does not immediately call the function, instead saving it to be used for later
 
 let name = {
     firstname : 'Andrew',
@@ -1832,7 +1833,12 @@ printInfoFunc = function( hometown, state) {
     console.log( this.firstname + ' ' + this.lastname + ', ' + hometown + ', ' + state );
 }
 
-let newPrintName = printInfoFunc.bind(name, 'Saint Louis' , 'MO');
-newPrintName();
+//let newPrintName = printInfoFunc.bind(name, 'Saint Louis' , 'MO');
+//newPrintName();
+// ---> Andrew Brase, Saint Louis, MO
 
-Andrew Brase, Saint Louis, MO
+let newPrintName = printInfoFunc.bind(name);
+newPrintName('Saint Louis' , 'MO');
+// ---> Andrew Brase, Saint Louis, MO
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
