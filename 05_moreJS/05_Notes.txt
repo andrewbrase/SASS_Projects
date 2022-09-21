@@ -1851,3 +1851,20 @@ bookEW('Hannah Gallag')
 // specifying parts of the argument beforeheand is called partial application, 
 // part of the arguments of the original function are already applied
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+let flight = {
+    destination : 'puerto rico',
+    aircraftNumber : 'EW122',
+}
+
+printFlightInfo = function( firstname, lastname) {
+    console.log( firstname + ' ' + lastname + ' has boarded flight to ' + this.destination + ' ' + 'on aircraft ' + this.aircraftNumber);
+}
+
+let newFlightPrint = printFlightInfo.bind(flight);
+newFlightPrint('Ann' , 'Jaime');
+newFlightPrint('Jeffery' , 'Wells');
+
+// ---> 
+Ann Jaime has boarded flight to puerto rico on aircraft EW122
+Jeffery Wells has boarded flight to puerto rico on aircraft EW122
