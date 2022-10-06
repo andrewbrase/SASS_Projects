@@ -56,6 +56,14 @@ const updateRoster = (firstname, newlast, newage) => {
     })
 }
 
+const newClassCreate = (teacher, classtype) => {
+    classMap.set(teacher, classtype)
+
+    // insert the new class tag before the create new classroom button
+    firstClass.insertAdjacentHTML('beforebegin', `<p>${teacher}</p>`)
+    console.log(classMap)
+}
+
 const newClassHandler = () => {
     toggleModal()
     modalText.innerHTML = 
@@ -85,12 +93,7 @@ const newClassHandler = () => {
         let classType = document.getElementById('class-type').value;
         
         if (teacherName !== ''){
-
-
-
-
-
-            
+            newClassCreate(teacherName,classType)
             toggleModal()
         }
 

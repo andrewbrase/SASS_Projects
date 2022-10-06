@@ -4,8 +4,8 @@
 }
 .main .unassigned-students {
   overflow: scroll;
-  height: 500px;
-  max-height: 500px;
+  height: 400px;
+  width: 400px;
 }
 .main section {
   padding: 10px;
