@@ -33,6 +33,10 @@ const updateRoster = (firstname, newlast, newage) => {
     let removedStudent = document.getElementById(`P${firstname}`);
     removedStudent.remove()
 
+    // 
+    // !!! need to add a method to choose the class that the child will be entered into, will need to validate the guidelines as well per class
+    // 
+    
     firstClass.insertAdjacentHTML('beforeend', studentTest);
     // need to edit the assign -> button to say <-unassign
     })
