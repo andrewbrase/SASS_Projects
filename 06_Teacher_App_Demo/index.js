@@ -9,6 +9,9 @@ const unassignedStudents = document.getElementById('unassigned-students');
 const firstClass = document.getElementById('first-class');
 
 // empty map will be used to hold all of the student key value pairs
+const rosterMap = new Map();
+
+// empty map to add new classrooms
 const classMap = new Map();
 
 // toggles the appearance of the modal
@@ -19,10 +22,10 @@ const toggleModal = () => {
 
 // updates the classRoster through a map object, assigns button to their tag as well
 const updateRoster = (firstname, newlast, newage) => {
-    classMap.set(firstname, {lastname : newlast, age :newage})
-    console.log(classMap)
+    rosterMap.set(firstname, {lastname : newlast, age :newage})
+    console.log(rosterMap)
 
-    let student = classMap.get(firstname)
+    let student = rosterMap.get(firstname)
 
     // add student to roster
     let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button></p>`
@@ -31,15 +34,17 @@ const updateRoster = (firstname, newlast, newage) => {
     // adds a submit button event handler per student
     let newStudentAssignButton = document.getElementById(`B${firstname}`);
     newStudentAssignButton.addEventListener('click' , function test(){
-    // need to remove that student from unassigned students
-    let removedStudent = document.getElementById(`P${firstname}`);
-    removedStudent.remove()
 
     // 
     // !!! need to add a method to choose the class that the child will be entered into, will need to validate the guidelines as well per class
     // 
 
-    firstClass.insertAdjacentHTML('beforeend', studentTest);
+    if (classMap.size !== 0){
+        // need to remove that student from unassigned students
+        let removedStudent = document.getElementById(`P${firstname}`);
+        removedStudent.remove()
+        firstClass.insertAdjacentHTML('beforeend', studentTest);
+    }
     // need to edit the assign -> button to say <-unassign
     })
 }

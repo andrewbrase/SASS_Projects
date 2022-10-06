@@ -11,17 +11,18 @@
 
 <body>
     <div class="main">
-        <section id="unassigned-students">
+        <section id="unassigned-students" class="unassigned-students">
             <h1>Unassigned Students <button class="new-student-button" id="new-student-button">New Student</button></h1>
         </section>
 
-        <section id="first-class">
-            <h1>New Class Template</h1>
+        <section id="first-class" class="new-classroom">
+            <h1>Create a new classroom</h1>
+            <button>+</button>
         </section>
     </div>
 
     <div class="modal hidden" id="modal">
-        <button id="close-modal-button">X</button>
+        <button id="close-modal-button" class="close-modal-button">X</button>
         <div id="modal-text">
             <h1>Add new Student</h1>
             <input id="firstname" type="text" placeholder="First Name" required>
