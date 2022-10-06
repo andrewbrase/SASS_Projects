@@ -7,6 +7,7 @@ const closeModalButton = document.getElementById('close-modal-button');
 const modalText = document.getElementById('modal-text');
 const unassignedStudents = document.getElementById('unassigned-students');
 const firstClass = document.getElementById('first-class');
+const newClassButton = document.getElementById('new-class-button');
 
 // empty map will be used to hold all of the student key value pairs
 const rosterMap = new Map();
@@ -28,7 +29,7 @@ const updateRoster = (firstname, newlast, newage) => {
     let student = rosterMap.get(firstname)
 
     // add student to roster
-    let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button></p>`
+    let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button> <button>X</button></p>`
     unassignedStudents.insertAdjacentHTML('beforeend', studentTest);
 
     // adds a submit button event handler per student
@@ -40,12 +41,59 @@ const updateRoster = (firstname, newlast, newage) => {
     // 
 
     if (classMap.size !== 0){
+
+        toggleModal()
+
         // need to remove that student from unassigned students
         let removedStudent = document.getElementById(`P${firstname}`);
         removedStudent.remove()
         firstClass.insertAdjacentHTML('beforeend', studentTest);
+    } else {
+        alert('Please create a class to assign students to')
     }
+
     // need to edit the assign -> button to say <-unassign
+    })
+}
+
+const newClassHandler = () => {
+    toggleModal()
+    modalText.innerHTML = 
+    `
+    <div>
+    <h1>Create a new class</h1>
+    <input id="teacher-name" type='text' placeholder='Teacher Name'>
+
+    <label for="class-type">Class Type:</label>
+    <select id="class-type" name="class-type">
+    <option value="nursery">Nursery</value>
+    <option value="toddlers">Toddlers</value>
+    <option value="2s">2s</value>
+    <option value="3s">3s</value>
+    <option value="pre-school">Pre-School</value>
+
+    </select>
+    <button id="create-class-button">Create Class</button>
+
+    </div>
+    `
+
+    let createClassButton = document.getElementById('create-class-button');
+    createClassButton.addEventListener('click', function createClassHandler(){
+
+        let teacherName = document.getElementById('teacher-name').value;
+        let classType = document.getElementById('class-type').value;
+        
+        if (teacherName !== ''){
+
+
+
+
+
+            
+            toggleModal()
+        }
+
     })
 }
 
@@ -54,9 +102,9 @@ const addStudentRoster = () => {
     modalText.innerHTML = 
     `
     <h1>Add new Student</h1>
-    <input id="firstname" type="text" placeholder="First Name" required>
-    <input id="lastname" type="text" placeholder="Last Name" required>
-    <input id="age" type="text" placeholder="Student age" required>
+    <input id="firstname" type="text" placeholder="First Name">
+    <input id="lastname" type="text" placeholder="Last Name">
+    <input id="age" type="text" placeholder="Student age">
     <button id="submit-button">Submit</button>
     `
 
@@ -81,4 +129,5 @@ const addStudentRoster = () => {
 }
 
 newStudentButton.addEventListener('click', addStudentRoster);
-closeModalButton.addEventListener('click', toggleModal)
+closeModalButton.addEventListener('click', toggleModal);
+newClassButton.addEventListener('click', newClassHandler)
