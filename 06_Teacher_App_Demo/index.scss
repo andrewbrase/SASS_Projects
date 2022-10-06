@@ -1,0 +1,50 @@
+// sass index.scss:index.css
+// sass --watch index.scss:index.css
+
+.main {
+
+    display: flex;
+    gap: 10px;
+
+    section {
+
+        padding: 10px;
+
+        .new-student-button {
+            padding: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+            border-style: none;
+            border-radius: 15px;
+            background-color: rgb(184, 184, 184);
+        }
+
+        .new-student-button:hover {
+            background-color: rgb(158, 158, 158);
+        }
+
+        width: 50%;
+        border-radius: 15px;
+        background-color: rgb(219, 219, 219);
+        height: fit-content;
+
+    }
+}
+
+.modal {
+
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: rgb(219, 219, 219);
+  padding: 6rem;
+  border-radius: 5px;
+  z-index: 10;
+
+}
+
+.hidden {
+    display: none;
+}
