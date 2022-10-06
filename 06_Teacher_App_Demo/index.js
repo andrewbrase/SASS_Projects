@@ -1,6 +1,7 @@
 "use strict";
 
 const newStudentButton = document.getElementById('new-student-button');
+const view = document.getElementById('view');
 const modal = document.getElementById('modal');
 const closeModalButton = document.getElementById('close-modal-button');
 const modalText = document.getElementById('modal-text');
@@ -12,6 +13,7 @@ const classMap = new Map();
 
 // toggles the appearance of the modal
 const toggleModal = () => {
+    view.classList.toggle('overlay')
     modal.classList.toggle('hidden');
 }
 
@@ -36,7 +38,7 @@ const updateRoster = (firstname, newlast, newage) => {
     // 
     // !!! need to add a method to choose the class that the child will be entered into, will need to validate the guidelines as well per class
     // 
-    
+
     firstClass.insertAdjacentHTML('beforeend', studentTest);
     // need to edit the assign -> button to say <-unassign
     })
