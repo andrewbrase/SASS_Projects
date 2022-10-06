@@ -24,7 +24,6 @@ const toggleModal = () => {
 // updates the classRoster through a map object, assigns button to their tag as well
 const updateRoster = (firstname, newlast, newage) => {
     rosterMap.set(firstname, {lastname : newlast, age :newage})
-    console.log(rosterMap)
 
     let student = rosterMap.get(firstname)
 
@@ -43,11 +42,54 @@ const updateRoster = (firstname, newlast, newage) => {
     if (classMap.size !== 0){
 
         toggleModal()
+        modalText.innerHTML = 
+        `
+        <div>
+        <h1>Choose class to assign student to</h1>
+        </div>
+        `
 
         // need to remove that student from unassigned students
         let removedStudent = document.getElementById(`P${firstname}`);
         removedStudent.remove()
-        firstClass.insertAdjacentHTML('beforeend', studentTest);
+        
+        // do a for each method on every teacher class and add it to the modal
+        classMap.forEach(value => {
+            console.log(value)
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     } else {
         alert('Please create a class to assign students to')
     }
@@ -60,8 +102,8 @@ const newClassCreate = (teacher, classtype) => {
     classMap.set(teacher, classtype)
 
     // insert the new class tag before the create new classroom button
-    firstClass.insertAdjacentHTML('beforebegin', `<p>${teacher}</p>`)
-    console.log(classMap)
+    firstClass.insertAdjacentHTML('beforebegin', `<section class="new-class">${teacher}</section>`)
+    
 }
 
 const newClassHandler = () => {

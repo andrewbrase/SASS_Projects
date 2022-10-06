@@ -4,6 +4,8 @@
 .main {
 
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
 
     .unassigned-students {
@@ -12,7 +14,11 @@
         width: 400px;
     }
 
-    // need to add a class for the new classroom templates
+    .new-class {
+        overflow: scroll;
+        height: 400px;
+        width: 400px;
+    }
 
     section {
 
@@ -39,8 +45,8 @@
     }
 
     .new-classroom {
-        width: 200px;
-        min-height: 200px;
+        height: 400px;
+        width: 400px;
         text-align: center;
 
         button {
@@ -61,7 +67,7 @@
 
 .modal {
 
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
