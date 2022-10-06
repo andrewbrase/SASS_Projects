@@ -6,12 +6,19 @@ const closeModalButton = document.getElementById('close-modal-button');
 const modalText = document.getElementById('modal-text');
 const unassignedStudents = document.getElementById('unassigned-students');
 const firstClass = document.getElementById('first-class');
-// const classMap = new Map();
+const classMap = new Map();
 
+// toggles the appearance of the modal
 const toggleModal = () => {
 
     modal.classList.toggle('hidden');
 
+}
+
+// updates the classRoster through a map object
+const updateRoster = (firstname, newlast, newage) => {
+    classMap.set(firstname, {lastname : newlast, age :newage})
+    console.log(classMap)
 }
 
 const addStudentRoster = () => {
@@ -36,12 +43,9 @@ const addStudentRoster = () => {
 
             // these are the values that were assigned from the input fields
             // console.log(`new student ${newStudentFirstName} , ${newStudentLastName} age: ${newStudentAge} will be added to roster`)
-            toggleModal()
 
-            // add student to the map? will use this feature later
-            // classMap.set('newStudentFirstName', {lastname : newStudentLastName, age :newStudentAge})
-            // console.log(classMap.get('newStudentFirstName'))
-
+            toggleModal();
+            updateRoster(newStudentFirstName, newStudentLastName, newStudentAge);
             // add student to roster
             let studentTest = `<p id="P${newStudentFirstName}">${newStudentFirstName} ${newStudentLastName} age: ${newStudentAge} <button id="B${newStudentFirstName}">Assign -></button></p>`
             unassignedStudents.insertAdjacentHTML('beforeend', studentTest);
@@ -50,7 +54,6 @@ const addStudentRoster = () => {
             let newStudentAssignButton = document.getElementById(`B${newStudentFirstName}`);
 
             newStudentAssignButton.addEventListener('click' , function test(){
-            
             // need to remove that student from unassigned students
             let removedStudent = document.getElementById(`P${newStudentFirstName}`);
             removedStudent.remove()
