@@ -5,7 +5,8 @@ const modal = document.getElementById('modal');
 const closeModalButton = document.getElementById('close-modal-button');
 const modalText = document.getElementById('modal-text');
 const unassignedStudents = document.getElementById('unassigned-students');
-const classMap = new Map();
+const firstClass = document.getElementById('first-class');
+// const classMap = new Map();
 
 const toggleModal = () => {
 
@@ -47,8 +48,15 @@ const addStudentRoster = () => {
 
             // adds a submit button event handler per student
             let newStudentAssignButton = document.getElementById(`B${newStudentFirstName}`);
+
             newStudentAssignButton.addEventListener('click' , function test(){
-                console.log('test')
+            
+            // need to remove that student from unassigned students
+            let removedStudent = document.getElementById(`P${newStudentFirstName}`);
+            removedStudent.remove()
+
+            firstClass.insertAdjacentHTML('beforeend', studentTest);
+            // need to edit the assign -> button to say <-unassign
             })
 
         } else {
