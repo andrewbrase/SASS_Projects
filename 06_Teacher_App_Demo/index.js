@@ -1,5 +1,13 @@
 "use strict";
 
+/*
+Bugs
+
+- Need to fix if assigning student to a teacher and then exit, the student disapears
+- Unassign student needs to be set back into unassigned secition
+
+*/
+
 const newStudentButton = document.getElementById('new-student-button');
 const view = document.getElementById('view');
 const modal = document.getElementById('modal');
@@ -57,8 +65,9 @@ const updateRoster = (firstname, newlast, newage) => {
         classMap.forEach((value, key) => {
             let classroom = 
             `
-            <h2>${key}</h2>
-            <button id="${key}-option">Assign</button>
+            <div class="teacher-option">
+            <h2>${key} <button id="${key}-option">Assign</button></h2>
+            </div>
             `
             modalText.insertAdjacentHTML('beforeend',classroom)
             
@@ -140,6 +149,8 @@ const newClassHandler = () => {
         if (teacherName !== ''){
             newClassCreate(teacherName,{class : classType, classroomRoster : new Map()})
             toggleModal()
+        } else {
+            alert('Please fill in every field');
         }
 
     })

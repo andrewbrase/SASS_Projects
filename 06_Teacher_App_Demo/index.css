@@ -9,10 +9,34 @@
   height: 400px;
   width: 400px;
 }
+.main .unassigned-students p {
+  background-color: rgb(230, 118, 118);
+  padding: 5px;
+  border-radius: 15px;
+}
+.main .unassigned-students p button {
+  margin-left: 5px;
+  margin-right: 5px;
+  float: right;
+  border-style: none;
+  border-radius: 15px;
+}
 .main .new-class {
   overflow: scroll;
   height: 400px;
   width: 400px;
+}
+.main .new-class p {
+  background-color: rgb(150, 230, 118);
+  padding: 5px;
+  border-radius: 15px;
+}
+.main .new-class p button {
+  margin-left: 5px;
+  margin-right: 5px;
+  float: right;
+  border-style: none;
+  border-radius: 15px;
 }
 .main section {
   padding: 10px;
@@ -61,6 +85,17 @@
 }
 .modal .close-modal-button {
   float: right;
+}
+.modal .modal-text {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 500px;
+}
+.modal .modal-text .teacher-option {
+  background-color: rgb(194, 194, 194);
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 15px;
 }
 
 .hidden {
