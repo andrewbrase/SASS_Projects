@@ -3,7 +3,6 @@
 /*
 Bugs
 
--student remove button only works for latest result, needs to be individual
 - Need to fix if assigning student to a teacher and then exit, the student disapears
 - Unassign student needs to be set back into unassigned secition
 
@@ -17,6 +16,9 @@ const modalText = document.getElementById('modal-text');
 const unassignedStudents = document.getElementById('unassigned-students');
 const firstClass = document.getElementById('first-class');
 const newClassButton = document.getElementById('new-class-button');
+
+// this ratio is used for different classroom setups, it defines the max number of kids in that class following legal guidelines 
+const maxdcfsRatio = {Nursery: 8, Toddlers: 10, Twos: 8, Threes: 10, PreSchool: 12}
 
 // empty map will be used to hold all of the student key value pairs
 const rosterMap = new Map();
@@ -115,8 +117,10 @@ const updateRoster = (firstname, newlast, newage) => {
 }
 
 const newClassCreate = (teacher, classtype) => {
-    classMap.set(teacher, classtype)
 
+    classMap.set(teacher, classtype)
+    console.log(classMap)
+    
     // insert the new class tag before the create new classroom button
     firstClass.insertAdjacentHTML('beforebegin', 
 
@@ -141,9 +145,9 @@ const newClassHandler = () => {
     <select id="class-type" name="class-type">
     <option value="Nursery">Nursery</value>
     <option value="Toddlers">Toddlers</value>
-    <option value="2s">2s</value>
-    <option value="3s">3s</value>
-    <option value="Pre-school">Pre-School</value>
+    <option value="Twos">2s</value>
+    <option value="Threes">3s</value>
+    <option value="PreSchool">Pre-School</value>
 
     </select>
     <button id="create-class-button">Create Class</button>
@@ -158,8 +162,10 @@ const newClassHandler = () => {
         let classType = document.getElementById('class-type').value;
         
         if (teacherName !== ''){
-            newClassCreate(teacherName,{class : classType, classroomRoster : new Map()})
+            
+            newClassCreate(teacherName,{class : classType, classroomRoster : new Map(), currentSize : 0, maxSize:maxdcfsRatio[classType]})
             toggleModal()
+
         } else {
             alert('Please fill in every field');
         }
