@@ -27,6 +27,7 @@
 }
 .main .new-class {
   overflow: scroll;
+  overflow-x: hidden;
   height: 400px;
   width: 400px;
 }
@@ -100,6 +101,15 @@
   margin-top: 10px;
   padding: 5px;
   border-radius: 15px;
+}
+.modal .modal-text .teacher-option button {
+  margin-left: 10px;
+  padding: 5px;
+  border-style: none;
+  border-radius: 15px;
+}
+.modal .modal-text .teacher-option button:hover {
+  background-color: rgb(218, 218, 218);
 }
 
 .hidden {

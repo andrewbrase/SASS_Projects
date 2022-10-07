@@ -3,6 +3,7 @@
 /*
 Bugs
 
+-student remove button only works for latest result, needs to be individual
 - Need to fix if assigning student to a teacher and then exit, the student disapears
 - Unassign student needs to be set back into unassigned secition
 
@@ -36,11 +37,11 @@ const updateRoster = (firstname, newlast, newage) => {
     let student = rosterMap.get(firstname)
 
     // add student to roster
-    let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button> <button id="student-delete-button">X</button></p>`
+    let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button> <button id="${firstname}student-delete-button">X</button></p>`
     unassignedStudents.insertAdjacentHTML('beforeend', studentTest);
 
     // student remove button
-    let studentDeleteButton = document.getElementById('student-delete-button');
+    let studentDeleteButton = document.getElementById(`${firstname}student-delete-button`);
     let thisStudentTag = document.getElementById(`P${firstname}`);
     studentDeleteButton.addEventListener('click', function studentDeleteHandler(){
         thisStudentTag.remove()
@@ -66,10 +67,11 @@ const updateRoster = (firstname, newlast, newage) => {
         
         // do a for each method on every teacher class and add it to the modal
         classMap.forEach((value, key) => {
+            
             let classroom = 
             `
             <div class="teacher-option">
-            <h2>${key} <button id="${key}-option">Assign</button></h2>
+            <h2>${key} (${value.class})<button id="${key}-option">Assign</button></h2>
             </div>
             `
             modalText.insertAdjacentHTML('beforeend',classroom)
@@ -116,7 +118,14 @@ const newClassCreate = (teacher, classtype) => {
     classMap.set(teacher, classtype)
 
     // insert the new class tag before the create new classroom button
-    firstClass.insertAdjacentHTML('beforebegin', `<section class="new-class" id="new-class${teacher}">${teacher}</section>`)
+    firstClass.insertAdjacentHTML('beforebegin', 
+
+    `
+    <section class="new-class" id="new-class${teacher}">
+    <h2>${teacher}'s Classroom (${classtype.class})</h2>
+    </section>
+    `
+    )
     
 }
 
@@ -130,11 +139,11 @@ const newClassHandler = () => {
 
     <label for="class-type">Class Type:</label>
     <select id="class-type" name="class-type">
-    <option value="nursery">Nursery</value>
-    <option value="toddlers">Toddlers</value>
+    <option value="Nursery">Nursery</value>
+    <option value="Toddlers">Toddlers</value>
     <option value="2s">2s</value>
     <option value="3s">3s</value>
-    <option value="pre-school">Pre-School</value>
+    <option value="Pre-school">Pre-School</value>
 
     </select>
     <button id="create-class-button">Create Class</button>
