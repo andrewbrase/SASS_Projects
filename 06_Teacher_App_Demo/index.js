@@ -54,40 +54,43 @@ const updateRoster = (firstname, newlast, newage) => {
         removedStudent.remove()
         
         // do a for each method on every teacher class and add it to the modal
-        classMap.forEach(value => {
-            console.log(value)
+        classMap.forEach((value, key) => {
+            let classroom = 
+            `
+            <h2>${key}</h2>
+            <button id="${key}-option">Assign</button>
+            `
+            modalText.insertAdjacentHTML('beforeend',classroom)
+            
+            let teacherOption = document.getElementById(`${key}-option`)
+            teacherOption.addEventListener('click' , function teacherOptionHandler(){
+                
+                //creating a student object and adding it to the classroom roster map object
+                class assignedStudent {
+                    constructor(name,last,age) {
+                        this.firstname = name;
+                        this.lastname = last;
+                        this.age = age;
+                    }
+                }
+
+                let studentAddToClass = new assignedStudent(firstname,newlast,newage);
+
+                let teacherEntry = (classMap.get(`${key}`))
+                teacherEntry.classroomRoster = teacherEntry.classroomRoster.set(firstname , studentAddToClass)
+                console.log(teacherEntry)
+
+                let teacherSection = document.getElementById(`new-class${key}`)
+
+                let studentTag = 
+                `
+                <p id="P${firstname}">${firstname} ${newlast} age: ${newage} <button id="B${firstname}"><- Unassign</button> <button id="exit-button">X</button></p>
+                `
+                teacherSection.insertAdjacentHTML('beforeend', studentTag)
+                toggleModal()
+
+            })
         })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     } else {
@@ -102,7 +105,7 @@ const newClassCreate = (teacher, classtype) => {
     classMap.set(teacher, classtype)
 
     // insert the new class tag before the create new classroom button
-    firstClass.insertAdjacentHTML('beforebegin', `<section class="new-class">${teacher}</section>`)
+    firstClass.insertAdjacentHTML('beforebegin', `<section class="new-class" id="new-class${teacher}">${teacher}</section>`)
     
 }
 
@@ -135,7 +138,7 @@ const newClassHandler = () => {
         let classType = document.getElementById('class-type').value;
         
         if (teacherName !== ''){
-            newClassCreate(teacherName,classType)
+            newClassCreate(teacherName,{class : classType, classroomRoster : new Map()})
             toggleModal()
         }
 
