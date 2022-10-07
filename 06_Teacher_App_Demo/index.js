@@ -36,16 +36,19 @@ const updateRoster = (firstname, newlast, newage) => {
     let student = rosterMap.get(firstname)
 
     // add student to roster
-    let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button> <button>X</button></p>`
+    let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button> <button id="student-delete-button">X</button></p>`
     unassignedStudents.insertAdjacentHTML('beforeend', studentTest);
+
+    // student remove button
+    let studentDeleteButton = document.getElementById('student-delete-button');
+    let thisStudentTag = document.getElementById(`P${firstname}`);
+    studentDeleteButton.addEventListener('click', function studentDeleteHandler(){
+        thisStudentTag.remove()
+    })
 
     // adds a submit button event handler per student
     let newStudentAssignButton = document.getElementById(`B${firstname}`);
     newStudentAssignButton.addEventListener('click' , function test(){
-
-    // 
-    // !!! need to add a method to choose the class that the child will be entered into, will need to validate the guidelines as well per class
-    // 
 
     if (classMap.size !== 0){
 
@@ -87,7 +90,6 @@ const updateRoster = (firstname, newlast, newage) => {
 
                 let teacherEntry = (classMap.get(`${key}`))
                 teacherEntry.classroomRoster = teacherEntry.classroomRoster.set(firstname , studentAddToClass)
-                console.log(teacherEntry)
 
                 let teacherSection = document.getElementById(`new-class${key}`)
 

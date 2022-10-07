@@ -10,6 +10,7 @@
 
     .unassigned-students {
         overflow: scroll;
+        overflow-x: hidden;
         height: 400px;
         width: 400px;
 
@@ -24,6 +25,10 @@
                 float: right;
                 border-style: none;
                 border-radius: 15px;
+            }
+
+            button:hover {
+                background-color: rgb(203, 203, 203);
             }
         }
     }
