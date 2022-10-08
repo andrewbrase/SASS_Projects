@@ -3,8 +3,8 @@
 /*
 Bugs
 
-- Need to fix if assigning student to a teacher and then exit, the student disapears
-- Unassign student needs to be set back into unassigned secition
+- if two students have the same first name and then you try to add them to a classroom, they disapear
+- Unassign student needs to be set back into unassigned secition from classrooms if they are <- unassigned
 
 */
 
@@ -62,10 +62,6 @@ const updateRoster = (firstname, newlast, newage) => {
         <h1>Choose class to assign student to</h1>
         </div>
         `
-
-        // need to remove that student from unassigned students
-        let removedStudent = document.getElementById(`P${firstname}`);
-        removedStudent.remove()
         
         // do a for each method on every teacher class and add it to the modal
         classMap.forEach((value, key) => {
@@ -102,6 +98,10 @@ const updateRoster = (firstname, newlast, newage) => {
                 <p id="P${firstname}">${firstname} ${newlast} age: ${newage} <button id="B${firstname}"><- Unassign</button> <button id="exit-button">X</button></p>
                 `
 
+                // need to remove that student from unassigned students
+                let removedStudent = document.getElementById(`P${firstname}`);
+                removedStudent.remove()
+
                 teacherSection.insertAdjacentHTML('beforeend', studentTag)
                 let numberOfStudents = document.getElementById(`${key}-classroom-size`);
                 numberOfStudents.textContent = parseInt(numberOfStudents.textContent) + 1;
@@ -110,7 +110,11 @@ const updateRoster = (firstname, newlast, newage) => {
                 toggleModal()
 
                 if (teacherEntry.currentSize > teacherEntry.maxSize){
+
+                    let teacherClassSize = document.getElementById(`${key}-classroom-back`)
+                    teacherClassSize.classList.add('max-size');
                     alert(`WARNING: \nClassroom max size has been reached for ${key}'s Classroom`)
+
                 }
             })
         })
@@ -120,7 +124,6 @@ const updateRoster = (firstname, newlast, newage) => {
         alert('Please create a class to assign students to')
     }
 
-    // need to edit the assign -> button to say <-unassign
     })
 }
 
@@ -135,7 +138,7 @@ const newClassCreate = (teacher, classtype) => {
     `
     <section class="new-class" id="new-class${teacher}">
     <h2>${teacher}'s Classroom (${classtype.class})</h2>
-    <h3><span id="${teacher}-classroom-size">${classtype.currentSize}</span>/${classtype.maxSize} Students</h3>
+    <h3 id="${teacher}-classroom-back"><span id="${teacher}-classroom-size">${classtype.currentSize}</span>/${classtype.maxSize} Students</h3>
     </section>
     `
     )
@@ -176,7 +179,9 @@ const newClassHandler = () => {
             toggleModal()
 
         } else {
+
             alert('Please fill in every field');
+
         }
 
     })

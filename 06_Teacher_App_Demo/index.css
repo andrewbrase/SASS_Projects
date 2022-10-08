@@ -43,6 +43,9 @@
   border-style: none;
   border-radius: 15px;
 }
+.main .new-class .max-size {
+  background-color: rgb(230, 118, 118);
+}
 .main section {
   padding: 10px;
   width: 50%;
