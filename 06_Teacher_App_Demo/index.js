@@ -18,7 +18,7 @@ const firstClass = document.getElementById('first-class');
 const newClassButton = document.getElementById('new-class-button');
 
 // this ratio is used for different classroom setups, it defines the max number of kids in that class following legal guidelines 
-const maxdcfsRatio = {Nursery: 8, Toddlers: 10, Twos: 8, Threes: 10, PreSchool: 12}
+const maxdcfsRatio = {Nursery: 8, Toddlers: 10, Twos: 8, Threes: 10, PreSchool: 12};
 
 // empty map will be used to hold all of the student key value pairs
 const rosterMap = new Map();
@@ -28,15 +28,15 @@ const classMap = new Map();
 
 // toggles the appearance of the modal
 const toggleModal = () => {
-    view.classList.toggle('overlay')
+    view.classList.toggle('overlay');
     modal.classList.toggle('hidden');
 }
 
 // updates the classRoster through a map object, assigns button to their tag as well
 const updateRoster = (firstname, newlast, newage) => {
-    rosterMap.set(firstname, {lastname : newlast, age :newage})
+    rosterMap.set(firstname, {lastname : newlast, age :newage});
 
-    let student = rosterMap.get(firstname)
+    let student = rosterMap.get(firstname);
 
     // add student to roster
     let studentTest = `<p id="P${firstname}">${firstname} ${student.lastname} age: ${student.age} <button id="B${firstname}">Assign -></button> <button id="${firstname}student-delete-button">X</button></p>`
@@ -46,7 +46,7 @@ const updateRoster = (firstname, newlast, newage) => {
     let studentDeleteButton = document.getElementById(`${firstname}student-delete-button`);
     let thisStudentTag = document.getElementById(`P${firstname}`);
     studentDeleteButton.addEventListener('click', function studentDeleteHandler(){
-        thisStudentTag.remove()
+        thisStudentTag.remove();
     })
 
     // adds a submit button event handler per student
@@ -55,7 +55,7 @@ const updateRoster = (firstname, newlast, newage) => {
 
     if (classMap.size !== 0){
 
-        toggleModal()
+        toggleModal();
         modalText.innerHTML = 
         `
         <div>
@@ -72,9 +72,9 @@ const updateRoster = (firstname, newlast, newage) => {
             <h2>${key} (${value.class})<button id="${key}-option">Assign</button></h2>
             </div>
             `
-            modalText.insertAdjacentHTML('beforeend',classroom)
+            modalText.insertAdjacentHTML('beforeend',classroom);
             
-            let teacherOption = document.getElementById(`${key}-option`)
+            let teacherOption = document.getElementById(`${key}-option`);
             teacherOption.addEventListener('click' , function teacherOptionHandler(){
                 
                 //creating a student object and adding it to the classroom roster map object
@@ -88,10 +88,10 @@ const updateRoster = (firstname, newlast, newage) => {
 
                 let studentAddToClass = new assignedStudent(firstname,newlast,newage);
 
-                let teacherEntry = (classMap.get(`${key}`))
-                teacherEntry.classroomRoster = teacherEntry.classroomRoster.set(firstname , studentAddToClass)
+                let teacherEntry = (classMap.get(`${key}`));
+                teacherEntry.classroomRoster = teacherEntry.classroomRoster.set(firstname , studentAddToClass);
 
-                let teacherSection = document.getElementById(`new-class${key}`)
+                let teacherSection = document.getElementById(`new-class${key}`);
 
                 let studentTag = 
                 `
@@ -100,20 +100,20 @@ const updateRoster = (firstname, newlast, newage) => {
 
                 // need to remove that student from unassigned students
                 let removedStudent = document.getElementById(`P${firstname}`);
-                removedStudent.remove()
+                removedStudent.remove();
 
-                teacherSection.insertAdjacentHTML('beforeend', studentTag)
+                teacherSection.insertAdjacentHTML('beforeend', studentTag);
                 let numberOfStudents = document.getElementById(`${key}-classroom-size`);
                 numberOfStudents.textContent = parseInt(numberOfStudents.textContent) + 1;
                 teacherEntry.currentSize = parseInt(numberOfStudents.textContent);
 
-                toggleModal()
+                toggleModal();
 
                 if (teacherEntry.currentSize > teacherEntry.maxSize){
 
-                    let teacherClassSize = document.getElementById(`${key}-classroom-back`)
+                    let teacherClassSize = document.getElementById(`${key}-classroom-back`);
                     teacherClassSize.classList.add('max-size');
-                    alert(`WARNING: \nClassroom max size has been reached for ${key}'s Classroom`)
+                    alert(`WARNING: \nClassroom max size has been reached for ${key}'s Classroom`);
 
                 }
             })
@@ -121,7 +121,7 @@ const updateRoster = (firstname, newlast, newage) => {
 
 
     } else {
-        alert('Please create a class to assign students to')
+        alert('Please create a class to assign students to');
     }
 
     })
@@ -129,8 +129,8 @@ const updateRoster = (firstname, newlast, newage) => {
 
 const newClassCreate = (teacher, classtype) => {
 
-    classMap.set(teacher, classtype)
-    console.log(classMap)
+    classMap.set(teacher, classtype);
+    console.log(classMap);
 
     // insert the new class tag before the create new classroom button
     firstClass.insertAdjacentHTML('beforebegin', 
@@ -146,7 +146,7 @@ const newClassCreate = (teacher, classtype) => {
 }
 
 const newClassHandler = () => {
-    toggleModal()
+    toggleModal();
     modalText.innerHTML = 
     `
     <div>
@@ -175,8 +175,8 @@ const newClassHandler = () => {
         
         if (teacherName !== ''){
             
-            newClassCreate(teacherName,{class : classType, classroomRoster : new Map(), currentSize : 0, maxSize:maxdcfsRatio[classType]})
-            toggleModal()
+            newClassCreate(teacherName,{class : classType, classroomRoster : new Map(), currentSize : 0, maxSize:maxdcfsRatio[classType]});
+            toggleModal();
 
         } else {
 
@@ -188,7 +188,7 @@ const newClassHandler = () => {
 }
 
 const addStudentRoster = () => {
-    toggleModal()
+    toggleModal();
     modalText.innerHTML = 
     `
     <h1>Add new Student</h1>
@@ -198,11 +198,12 @@ const addStudentRoster = () => {
     <button id="submit-button">Submit</button>
     `
 
-    let submitButton = document.getElementById('submit-button')
+    let submitButton = document.getElementById('submit-button');
     submitButton.addEventListener('click', function submitHandler(){
-        let newStudentFirstName = document.getElementById('firstname').value
-        let newStudentLastName = document.getElementById('lastname').value
-        let newStudentAge = document.getElementById('age').value
+        
+        let newStudentFirstName = document.getElementById('firstname').value;
+        let newStudentLastName = document.getElementById('lastname').value;
+        let newStudentAge = document.getElementById('age').value;
 
         if (newStudentFirstName !== '' && newStudentLastName !== '' && newStudentAge !== ''){
 
@@ -217,4 +218,4 @@ const addStudentRoster = () => {
 
 newStudentButton.addEventListener('click', addStudentRoster);
 closeModalButton.addEventListener('click', toggleModal);
-newClassButton.addEventListener('click', newClassHandler)
+newClassButton.addEventListener('click', newClassHandler);
