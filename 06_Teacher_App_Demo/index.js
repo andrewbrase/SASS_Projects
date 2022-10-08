@@ -101,9 +101,17 @@ const updateRoster = (firstname, newlast, newage) => {
                 `
                 <p id="P${firstname}">${firstname} ${newlast} age: ${newage} <button id="B${firstname}"><- Unassign</button> <button id="exit-button">X</button></p>
                 `
+
                 teacherSection.insertAdjacentHTML('beforeend', studentTag)
+                let numberOfStudents = document.getElementById(`${key}-classroom-size`);
+                numberOfStudents.textContent = parseInt(numberOfStudents.textContent) + 1;
+                teacherEntry.currentSize = parseInt(numberOfStudents.textContent);
+
                 toggleModal()
 
+                if (teacherEntry.currentSize > teacherEntry.maxSize){
+                    alert(`WARNING: \nClassroom max size has been reached for ${key}'s Classroom`)
+                }
             })
         })
 
@@ -120,13 +128,14 @@ const newClassCreate = (teacher, classtype) => {
 
     classMap.set(teacher, classtype)
     console.log(classMap)
-    
+
     // insert the new class tag before the create new classroom button
     firstClass.insertAdjacentHTML('beforebegin', 
 
     `
     <section class="new-class" id="new-class${teacher}">
     <h2>${teacher}'s Classroom (${classtype.class})</h2>
+    <h3><span id="${teacher}-classroom-size">${classtype.currentSize}</span>/${classtype.maxSize} Students</h3>
     </section>
     `
     )
@@ -145,8 +154,8 @@ const newClassHandler = () => {
     <select id="class-type" name="class-type">
     <option value="Nursery">Nursery</value>
     <option value="Toddlers">Toddlers</value>
-    <option value="Twos">2s</value>
-    <option value="Threes">3s</value>
+    <option value="Twos">Twos</value>
+    <option value="Threes">Threes</value>
     <option value="PreSchool">Pre-School</value>
 
     </select>
@@ -191,9 +200,6 @@ const addStudentRoster = () => {
         let newStudentAge = document.getElementById('age').value
 
         if (newStudentFirstName !== '' && newStudentLastName !== '' && newStudentAge !== ''){
-
-            // these are the values that were assigned from the input fields
-            // console.log(`new student ${newStudentFirstName} , ${newStudentLastName} age: ${newStudentAge} will be added to roster`)
 
             toggleModal();
             updateRoster(newStudentFirstName, newStudentLastName, newStudentAge);
